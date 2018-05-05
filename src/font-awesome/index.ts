@@ -1,3 +1,4 @@
+
 /** 
  * Available FontAwesome icon styles. 
  * @see https://fontawesome.com/how-to-use
@@ -14,13 +15,15 @@ export enum IconStyle
  * Available FontAwesome icon style prefixes.
  * @see https://fontawesome.com/how-to-use
  */
-export const IconStylePrefix = 
+export const IconStylePrefix: {[style in IconStyle]: string} = 
 {
     [IconStyle.solid]: 'fas',
     [IconStyle.regular]: 'far',
     [IconStyle.light]: 'fal',
     [IconStyle.brands]: 'fab',
-} as {[style in IconStyle]: string};
+};
+
+export const AvailablePrefixes = Object.keys(IconStylePrefix).map(key => IconStylePrefix[key as IconStyle]);
 
 /**
  * Represents the stucture of an icon entry

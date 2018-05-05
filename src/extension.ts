@@ -1,16 +1,21 @@
-'use strict';
-
 import * as vscode from 'vscode';
-import FontAwesomeClassNameCompletionItemProvider from './completion-item-provider';
+import CompletionProvider from './font-awesome/completion-provider';
+import HoverProvider from './font-awesome/hover-provider';
+import Documentation from './font-awesome/documentation';
 
 const configurationSection = 'fontAwesome5Autocomplete';
+const documentation = new Documentation();
 
 export function activate(context: vscode.ExtensionContext) 
 {
-    const provider = new FontAwesomeClassNameCompletionItemProvider();
-    let disposable: vscode.Disposable;
+    const providers = {
+        completion: new CompletionProvider(documentation),
+        hover: new HoverProvider(documentation),
+    };
 
-    const registerCompletionItemProvider = () =>
+    let disposables: vscode.Disposable[] = [];
+
+    const registerProviders = () =>
     {
         // Load config
         const config = vscode.workspace.getConfiguration(configurationSection);
@@ -25,8 +30,8 @@ export function activate(context: vscode.ExtensionContext)
         // Load trigger characters
         let triggerCharacters = config.get('triggerCharacters') as string[];
         
-        // If the completion item is about to be registered again, remove previous instance first
-        if (disposable != null)
+        // If the providers are about to be registered again, remove previous instances first
+        for (let disposable of disposables)
         {
             let existingIndex = context.subscriptions.indexOf(disposable);
             if (existingIndex != -1)
@@ -37,19 +42,24 @@ export function activate(context: vscode.ExtensionContext)
             disposable.dispose();
         }
 
-        disposable = vscode.languages.registerCompletionItemProvider(patterns, provider, ...triggerCharacters);
-        context.subscriptions.push(disposable);
+
+        disposables = [
+            vscode.languages.registerCompletionItemProvider(patterns, providers.completion, ...triggerCharacters),
+            vscode.languages.registerHoverProvider(patterns, providers.hover)
+        ];
+
+        disposables.forEach(o => context.subscriptions.push(o));
     };
 
     vscode.workspace.onDidChangeConfiguration((e) =>
     {
         if (e.affectsConfiguration(configurationSection))
         {
-            registerCompletionItemProvider();
+            registerProviders();
         }
     });
 
-    registerCompletionItemProvider();
+    registerProviders();
 }
 
 export function deactivate() 
