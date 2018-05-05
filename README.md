@@ -6,6 +6,11 @@ Provides Font Awesome 5.0.12 CSS class names as autocompletion items for any lan
 ## Example usage
 ![](video/demo-01.gif)
 
+## Additional features
+
+### Mouse-over documentation
+![](image/demo-02.png)
+
 ## Configuration
 The following options can be set in the settings to configure the behavior of the extension:
 ```javascript
