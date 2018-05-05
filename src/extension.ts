@@ -29,16 +29,19 @@ class FontAwesomeClassNameCompletionItemProvider implements CompletionItemProvid
                 let imagePath = path.join(__dirname, '../fontawesome/advanced-options/raw-svg', style, `${name}.svg`);
                 let onlineUrl = `https://fontawesome.com/icons/${name}?style=${style}`;
                 let displayOnlineUrl = onlineUrl.replace('https://', '');
+                let classDeclaration = `${prefix} fa-${name}`;
 
                 this.completionItems.push({
-                    label: `${prefix} fa-${name}`,
-                    detail: `[Free] ${icon.label}`,
+                    label: classDeclaration,
+                    insertText: classDeclaration,
+                    detail: `${icon.label} [Free] [${style}]`,
                     documentation: new vscode.MarkdownString([
                         `![](${imagePath} | width=48 height=48)`,
                         '',
                         `|      |      |`,
                         `|------|------|`,
                         `| Unicode    |  \`${icon.unicode}\`    |`,
+                        `| Full name    |  \`${classDeclaration}\`    |`,
                         `| Reference &nbsp; &nbsp;| [${displayOnlineUrl}](${onlineUrl})   |`,
                         '',  
                         fontAwesomeTitle,  

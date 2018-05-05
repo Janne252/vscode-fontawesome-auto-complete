@@ -1,16 +1,32 @@
 {
     "name": "fontawesome-auto-complete",
     "displayName": "FontAwesome 5 auto-complete",
-    "description": "Provides FontAwesome 5.0.12 CSS class names as autocompletion items for all languages.",
     "version": "0.0.1",
     "publisher": "Janne252",
-    "license": "SEE LICENSE IN LICENSE.txt",
-    "engines": {
-        "vscode": "^1.23.0"
+    "description": "Provides FontAwesome 5.0.12 CSS class names as autocompletion items for all languages.",
+    "author": {
+        "name": "Janne Varjo"
     },
     "categories": [
         "Other"
     ],
+    "icon": "image/icon.png",
+    "galleryBanner": {
+        "color": "#C80000",
+        "theme": "dark"
+    },
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "bugs": {
+        "url": "https://github.com/Janne252/vscode-fontawesome-auto-complete/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Janne252/vscode-fontawesome-auto-complete.git"
+    },
+    "homepage": "https://github.com/Janne252/vscode-fontawesome-auto-complete/blob/master/README.md",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
     "keywords": [
         "FontAwesome", "FontAwesome 5", "class names", "auto-complete"
     ],
