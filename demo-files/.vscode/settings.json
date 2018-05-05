@@ -1,4 +1,8 @@
 {
-    "git.decorations.enabled": false,
-    "git.enabled": false
+    "fontAwesome5Autocomplete.patterns": [
+        "**/*.css", "**/*.html"
+    ],
+    "fontAwesome5Autocomplete.triggerCharacters": [
+        "f"
+    ]
 }
