@@ -1,15 +1,15 @@
 {
-    "name": "fontawesome-css-class-name-auto-complete",
-    "displayName": "FontAwesome 5 CSS class name auto-complete",
+    "name": "fontawesome-auto-complete",
+    "displayName": "FontAwesome 5 auto-complete",
     "description": "Provides FontAwesome 5.0.12 CSS class names as autocompletion items for all languages.",
     "version": "0.0.1",
     "publisher": "Janne252",
-    "license": "MIT",
+    "license": "SEE LICENSE IN LICENSE.md",
     "engines": {
         "vscode": "^1.23.0"
     },
     "categories": [
-        "Other", "Providers"
+        "Other"
     ],
     "keywords": [
         "FontAwesome", "FontAwesome 5", "class names", "auto-complete"
