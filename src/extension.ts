@@ -1,74 +1,55 @@
 'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+
 import * as vscode from 'vscode';
-import { CompletionItemProvider, CompletionItemKind } from 'vscode';
-import * as path from 'path';
-import * as fs from 'fs';
-import { IconEntry, IconStylePrefix } from './fontawesome';
+import FontAwesomeClassNameCompletionItemProvider from './completion-item-provider';
 
-const icons = require('../fontawesome/advanced-options/metadata/icons') as {[key: string]: IconEntry};
-const fontAwesomeReadmeLines = fs.readFileSync(path.join(__dirname, '../fontawesome/README.md'), 'utf8').split('\n');
+const configurationSection = 'fontAwesome5Autocomplete';
 
-class FontAwesomeClassNameCompletionItemProvider implements CompletionItemProvider 
-{
-    /** List of generated completion items. */
-    private readonly completionItems: vscode.CompletionItem[] = [];
-
-    constructor()
-    {
-        const fontAwesomeTitle = fontAwesomeReadmeLines[0].substring('# '.length);
-
-        for (let name in icons)
-        {
-            let icon = icons[name];
-            
-            for (let style of icon.styles)
-            {
-                let prefix = IconStylePrefix[style];
-                let imagePath = path.join(__dirname, '../fontawesome/advanced-options/raw-svg', style, `${name}.svg`);
-                let onlineUrl = `https://fontawesome.com/icons/${name}?style=${style}`;
-                let displayOnlineUrl = onlineUrl.replace('https://', '');
-                let classDeclaration = `${prefix} fa-${name}`;
-
-                this.completionItems.push({
-                    label: classDeclaration,
-                    insertText: classDeclaration,
-                    detail: `${icon.label} [Free] [${style}]`,
-                    documentation: new vscode.MarkdownString([
-                        `![](${imagePath} | width=48 height=48)`,
-                        '',
-                        `|      |      |`,
-                        `|------|------|`,
-                        `| Unicode    |  \`${icon.unicode}\`    |`,
-                        `| Full name    |  \`${classDeclaration}\`    |`,
-                        `| Reference &nbsp; &nbsp;| [${displayOnlineUrl}](${onlineUrl})   |`,
-                        '',  
-                        fontAwesomeTitle,  
-                    ].join('\n')),
-                    kind: CompletionItemKind.Reference
-                });
-            }
-        }
-    }
-
-    provideCompletionItems()
-    {
-        return this.completionItems;
-    }
-}
 export function activate(context: vscode.ExtensionContext) 
 {
+    const provider = new FontAwesomeClassNameCompletionItemProvider();
+    let disposable: vscode.Disposable;
 
-    context.subscriptions.push(
-        vscode.languages.registerCompletionItemProvider({
-                scheme: 'file', 
-                language: '*'
-            }, 
-            new FontAwesomeClassNameCompletionItemProvider(),
-            ...['f']
-        )
-    );
+    const registerCompletionItemProvider = () =>
+    {
+        // Load config
+        const config = vscode.workspace.getConfiguration(configurationSection);
+        
+        // Turn loaded glob patterns into DocumentFilters
+        let patterns = (config.get('patterns') as string[])
+            .map(pattern => <vscode.DocumentFilter>{
+                pattern: pattern,
+                scheme: 'file'
+            });
+        
+        // Load trigger characters
+        let triggerCharacters = config.get('triggerCharacters') as string[];
+        
+        // If the completion item is about to be registered again, remove previous instance first
+        if (disposable != null)
+        {
+            let existingIndex = context.subscriptions.indexOf(disposable);
+            if (existingIndex != -1)
+            {
+                context.subscriptions.splice(existingIndex, 1);
+            }
+
+            disposable.dispose();
+        }
+
+        disposable = vscode.languages.registerCompletionItemProvider(patterns, provider, ...triggerCharacters);
+        context.subscriptions.push(disposable);
+    };
+
+    vscode.workspace.onDidChangeConfiguration((e) =>
+    {
+        if (e.affectsConfiguration(configurationSection))
+        {
+            registerCompletionItemProvider();
+        }
+    });
+
+    registerCompletionItemProvider();
 }
 
 export function deactivate() 
