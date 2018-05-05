@@ -1,18 +1,36 @@
 {
-    "name": "fontawesome-auto-complete",
-    "displayName": "FontAwesome 5 auto-complete",
-    "version": "0.0.1",
+    "name": "fontawesome-autocomplete",
+    "displayName": "Font Awesome 5 Autocomplete",
+    "version": "0.0.2",
     "publisher": "Janne252",
-    "description": "Provides FontAwesome 5.0.12 CSS class names as autocompletion items for all languages.",
+    "description": "Provides Font Awesome 5.0.12 CSS class names as autocompletion items for all languages.",
     "author": {
         "name": "Janne Varjo"
     },
     "categories": [
         "Other"
     ],
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Font Awesome 5 autocomplete configuration",
+            "properties": {
+                "fontAwesome5Autocomplete.patterns": {
+                    "type": "array",
+                    "default": ["**/*.html"],
+                    "description": "List of glob patters that determine which files will have Font Awesome 5 Autocomplete enabled."
+                },
+                "fontAwesome5Autocomplete.triggerCharacters": {
+                    "type": "array",
+                    "default": ["f"],
+                    "description": "List of characters that trigger Font Awesome 5 Autocomplete."
+                }
+            }
+        }
+    },
     "icon": "image/icon.png",
     "galleryBanner": {
-        "color": "#C80000",
+        "color": "#1e1c1e",
         "theme": "dark"
     },
     "license": "SEE LICENSE IN LICENSE.txt",
@@ -28,7 +46,7 @@
         "vscode": "^1.23.0"
     },
     "keywords": [
-        "FontAwesome", "FontAwesome 5", "class names", "auto-complete"
+        "Font Awesome", "Font Awesome 5", "class names", "auto-complete"
     ],
     "activationEvents": [
         "*"
