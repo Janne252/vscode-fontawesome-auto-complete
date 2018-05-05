@@ -4,7 +4,7 @@
     "description": "Provides FontAwesome 5.0.12 CSS class names as autocompletion items for all languages.",
     "version": "0.0.1",
     "publisher": "Janne252",
-    "license": "SEE LICENSE IN LICENSE.md",
+    "license": "SEE LICENSE IN LICENSE.txt",
     "engines": {
         "vscode": "^1.23.0"
     },
