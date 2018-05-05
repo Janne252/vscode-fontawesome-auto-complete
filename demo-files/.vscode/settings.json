@@ -1,8 +1,0 @@
-{
-    "fontAwesome5Autocomplete.patterns": [
-        "**/*.css", "**/*.html"
-    ],
-    "fontAwesome5Autocomplete.triggerCharacters": [
-        "f"
-    ]
-}

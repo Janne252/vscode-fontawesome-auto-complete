@@ -1,9 +1,9 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome 5 Autocomplete",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "Janne252",
-    "description": "Provides Font Awesome 5.0.12 CSS class names as autocompletion items for all languages.",
+    "description": "Provides Font Awesome 5.0.12 CSS class names as autocompletion items for any language.",
     "author": {
         "name": "Janne Varjo"
     },
