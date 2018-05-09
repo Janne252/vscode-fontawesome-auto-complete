@@ -1,6 +1,10 @@
 # Change Log
 
-## [0.0.4]
+## [0.0.5] - 2018-09-05
+- Improved icon preview by adding a background color (configurable)
+- Added settings.json entries for icon preview background and foreground colors
+
+## [0.0.4] - 2018-05-05
 - Improved documentation formatting
 - Added a mouse-over popup that displays the same documentation as the autocomplete
 
