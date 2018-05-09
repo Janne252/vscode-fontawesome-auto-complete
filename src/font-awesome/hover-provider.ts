@@ -16,7 +16,7 @@ export default class HoverProvider implements IHoverProvider
     provideHover(document: TextDocument, position: Position)
     {
         let range = document.getWordRangeAtPosition(position, fullClassNamePattern) as Range;
-        console.log(fullClassNamePattern.source)
+        
         if (range == null)
         {
             return null;
