@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.0.5] - 2018-09-05
+## [0.0.5] - 2018-05-09
 - Improved icon preview by adding a background color (configurable)
 - Added settings.json entries for icon preview background and foreground colors
 
