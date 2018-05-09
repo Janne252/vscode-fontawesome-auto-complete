@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { IconEntry, IconStylePrefix, IconStyle } from ".";
+import { IconEntry, IconStylePrefix, IconStyle, PreviewStyle } from ".";
 
 export default class Icon
 {
@@ -12,9 +12,14 @@ export default class Icon
     readonly iconUrl: string;
     readonly fullCssName: string;
     readonly onlineUrl: string;
+
     readonly documentation: vscode.MarkdownString;
 
-    constructor(name: string, style: IconStyle, entry: IconEntry, documentationFooter: string)
+    private svgPath: string;
+    private previewSvg: string;
+    private viewbox: string[];
+
+    constructor(name: string, style: IconStyle, entry: IconEntry, previewStyle: PreviewStyle, documentationFooter: string)
     {
         this.name = name;
         this.label = entry.label;
@@ -23,19 +28,28 @@ export default class Icon
         this.style = style;
         this.iconUrl = path.join(__dirname, '../../fontawesome/advanced-options/raw-svg', this.style, `${this.name}.svg`);
         this.fullCssName = `${this.prefix} fa-${this.name}`;
-        this.onlineUrl = `https://fontawesome.com/icons/${this.name}?style=${this.style}`;
-
-        const protocolEnd = '://';
-        let displayOnlineUrl = this.onlineUrl.substring(this.onlineUrl.indexOf(protocolEnd) + protocolEnd.length);
+        this.onlineUrl = `fontawesome.com/icons/${this.name}?style=${this.style}`;
+        this.svgPath = entry.svg[style].path;
+        this.viewbox = entry.svg[style].viewBox;
         
+        this.previewSvg = `
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="${this.viewbox.join(' ')}"
+            style="background-color: ${previewStyle.backgroundColor};transform: scale%280.75%29;padding:8px;"
+        >
+            <path fill="${previewStyle.foregroundColor}" d="${this.svgPath}"/>
+        </svg>
+        `;
+
         this.documentation = new vscode.MarkdownString([
-            `![](${this.iconUrl} | width=48 height=48)`,
+            `![](data:image/svg+xml;utf8,${this.previewSvg} | width=64 height=64)`,
             '',
             `|                              |                                                         |`,
             `|------------------------------|---------------------------------------------------------|`,
             `| **Icon**                     | ${this.label} &nbsp; &nbsp; \`free\` \`${this.style}\`  |`,
             `| **Unicode**                  | \`${this.unicode}\`                                     |`,
-            `| **Reference &nbsp; &nbsp; ** | [${displayOnlineUrl}](${this.onlineUrl})                |`,
+            `| **Reference &nbsp; &nbsp; ** | [${this.onlineUrl}](https://${this.onlineUrl})          |`,
             '',
             documentationFooter
         ].join('\n'));

@@ -8,11 +8,6 @@ const documentation = new Documentation();
 
 export function activate(context: vscode.ExtensionContext) 
 {
-    const providers = {
-        completion: new CompletionProvider(documentation),
-        hover: new HoverProvider(documentation),
-    };
-
     let disposables: vscode.Disposable[] = [];
 
     const registerProviders = () =>
@@ -30,6 +25,17 @@ export function activate(context: vscode.ExtensionContext)
         // Load trigger characters
         let triggerCharacters = config.get('triggerCharacters') as string[];
         
+        // Load style
+        documentation.previewStyle = {
+            backgroundColor: config.get('preview.backgroundColor') as string,
+            foregroundColor: config.get('preview.foregroundColor') as string
+        };
+
+        const providers = {
+            completion: new CompletionProvider(documentation),
+            hover: new HoverProvider(documentation),
+        };
+        
         // If the providers are about to be registered again, remove previous instances first
         for (let disposable of disposables)
         {
@@ -41,7 +47,6 @@ export function activate(context: vscode.ExtensionContext)
 
             disposable.dispose();
         }
-
 
         disposables = [
             vscode.languages.registerCompletionItemProvider(patterns, providers.completion, ...triggerCharacters),

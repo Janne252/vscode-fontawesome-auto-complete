@@ -43,10 +43,16 @@ export interface IconEntry
         [style in IconStyle]: {
             last_modified: number,
             raw: string;
-            viewbox: [string, string, string, string];
+            viewBox: [string, string, string, string];
             width: number;
             height: number;
             path: string;
         }
     }
+}
+
+export interface PreviewStyle
+{
+    backgroundColor: string;
+    foregroundColor: string;
 }

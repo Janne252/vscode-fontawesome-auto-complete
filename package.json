@@ -1,7 +1,7 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome 5 Autocomplete",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "Janne252",
     "description": "Provides Font Awesome 5.0.12 CSS class names as autocompletion items for any language.",
     "author": {
@@ -24,6 +24,16 @@
                     "type": "array",
                     "default": ["f"],
                     "description": "List of characters that trigger Font Awesome 5 Autocomplete."
+                },
+                "fontAwesome5Autocomplete.preview.backgroundColor": {
+                    "type": "string",
+                    "default": "#ffffff",
+                    "description": "Background color of a Font Awesome icon preview. Supports any valid CSS color."
+                },
+                "fontAwesome5Autocomplete.preview.foregroundColor": {
+                    "type": "string",
+                    "default": "#000000",
+                    "description": "Foreground color of a Font Awesome icon preview. Supports any valid CSS color."
                 }
             }
         }
