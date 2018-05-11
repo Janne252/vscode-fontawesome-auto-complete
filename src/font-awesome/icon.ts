@@ -1,57 +1,56 @@
-import * as path from 'path';
 import * as vscode from 'vscode';
-import { IconEntry, IconStylePrefix, IconStyle, PreviewStyle } from ".";
+import { IconEntry, IconStylePrefix, IconStyle, Version } from ".";
+import Documentation from './documentation';
 
+/** Represents an icon that can be used as the source of Hover or Completion item. */
 export default class Icon
 {
-    readonly name: string;
-    readonly label: string;
-    readonly prefix: string;
-    readonly unicode: string;
-    readonly style: string;
-    readonly iconUrl: string;
-    readonly fullCssName: string;
-    readonly onlineUrl: string;
-
+    /** Documentation in Markdown format. */
     readonly documentation: vscode.MarkdownString;
+    /** Full CSS name of the icon, e.g. fas fa-user */
+    readonly fullCssName: string;
 
-    private svgPath: string;
-    private previewSvg: string;
-    private viewbox: string[];
-
-    constructor(name: string, style: IconStyle, entry: IconEntry, previewStyle: PreviewStyle, documentationFooter: string)
+    constructor(documentation: Documentation, name: string, style: IconStyle, entry: IconEntry)
     {
-        this.name = name;
-        this.label = entry.label;
-        this.prefix = IconStylePrefix[style];
-        this.unicode = entry.unicode;
-        this.style = style;
-        this.iconUrl = path.join(__dirname, '../../fontawesome/advanced-options/raw-svg', this.style, `${this.name}.svg`);
-        this.fullCssName = `${this.prefix} fa-${this.name}`;
-        this.onlineUrl = `fontawesome.com/icons/${this.name}?style=${this.style}`;
-        this.svgPath = entry.svg[style].path;
-        this.viewbox = entry.svg[style].viewBox;
-        
-        this.previewSvg = `
+        let prefix = IconStylePrefix[style];
+        let unicode = entry.unicode;
+
+        this.fullCssName = `${prefix} fa-${name}`;
+        let svgPath = entry.svg[style].path;
+        let viewbox = entry.svg[style].viewBox;
+        let onlineUrl = '';
+
+        // Version migrations
+        switch(documentation.version)
+        {
+            case Version.v4:
+                onlineUrl = `fontawesome.com/v4.7.0/icon/${name}/`;
+                break;
+            case Version.V5:
+                onlineUrl = `fontawesome.com/icons/${name}?style=${style}`;
+                break;                             
+        }
+
+        let previewSvg = `
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            viewBox="${this.viewbox.join(' ')}"
-            style="background-color: ${previewStyle.backgroundColor};transform: scale%280.75%29;padding:8px;"
+            viewBox="${viewbox.join(' ')}"
+            style="background-color: ${documentation.previewStyle.backgroundColor};transform: scale%280.75%29;padding:8px;"
         >
-            <path fill="${previewStyle.foregroundColor}" d="${this.svgPath}"/>
+            <path fill="${documentation.previewStyle.foregroundColor}" d="${svgPath}"/>
         </svg>
         `;
 
         this.documentation = new vscode.MarkdownString([
-            `![](data:image/svg+xml;utf8,${this.previewSvg} | width=64 height=64)`,
+            `![](data:image/svg+xml;utf8,${previewSvg} | width=64 height=64)`,
             '',
             `|                              |                                                         |`,
             `|------------------------------|---------------------------------------------------------|`,
-            `| **Icon**                     | ${this.label} &nbsp; &nbsp; \`free\` \`${this.style}\`  |`,
-            `| **Unicode**                  | \`${this.unicode}\`                                     |`,
-            `| **Reference &nbsp; &nbsp; ** | [${this.onlineUrl}](https://${this.onlineUrl})          |`,
+            `| **Icon**                     | ${entry.label} &nbsp; &nbsp; \`free\` \`${style}\`      |`,
+            `| **Unicode**                  | \`${unicode}\`                                          |`,
+            `| **Reference &nbsp; &nbsp; ** | [${onlineUrl}](https://${onlineUrl})                    |`,
             '',
-            documentationFooter
+            documentation.title
         ].join('\n'));
     }
 }

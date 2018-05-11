@@ -1,8 +1,9 @@
 {
     "git.enabled": false,
-    "fontAwesome5Autocomplete.patterns": [
+    "fontAwesomeAutocomplete.version": "4",
+    "fontAwesomeAutocomplete.patterns": [
         "**/*.html"
     ],
-    "fontAwesome5Autocomplete.preview.backgroundColor": "#ffffff",
-    "fontAwesome5Autocomplete.preview.foregroundColor": "#000000"
+    "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
+    "fontAwesomeAutocomplete.preview.foregroundColor": "#000000"
 }

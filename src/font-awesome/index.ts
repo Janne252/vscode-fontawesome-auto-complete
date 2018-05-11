@@ -1,4 +1,9 @@
 
+export enum Version
+{
+    v4 = '4',
+    V5 = '5'
+}
 /** 
  * Available FontAwesome icon styles. 
  * @see https://fontawesome.com/how-to-use
@@ -9,6 +14,7 @@ export enum IconStyle
     regular = 'regular',
     light = 'light',
     brands = 'brands',
+    v4 = 'v4',
 }
 
 /**
@@ -21,6 +27,7 @@ export const IconStylePrefix: {[style in IconStyle]: string} =
     [IconStyle.regular]: 'far',
     [IconStyle.light]: 'fal',
     [IconStyle.brands]: 'fab',
+    [IconStyle.v4]: 'fa',
 };
 
 export const AvailablePrefixes = Object.keys(IconStylePrefix).map(key => IconStylePrefix[key as IconStyle]);
@@ -40,15 +47,18 @@ export interface IconEntry
     unicode: string;
     label: string;
     svg: {
-        [style in IconStyle]: {
-            last_modified: number,
-            raw: string;
-            viewBox: [string, string, string, string];
-            width: number;
-            height: number;
-            path: string;
-        }
+        [style in IconStyle]: IconEntrySvg
     }
+}
+
+export interface IconEntrySvg
+{
+    last_modified: number,
+    raw: string;
+    viewBox: [string, string, string, string];
+    width: number;
+    height: number;
+    path: string;
 }
 
 export interface PreviewStyle

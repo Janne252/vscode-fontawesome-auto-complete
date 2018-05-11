@@ -1,9 +1,9 @@
 {
     "name": "fontawesome-autocomplete",
-    "displayName": "Font Awesome 5 Autocomplete",
-    "version": "0.0.5",
+    "displayName": "Font Awesome Autocomplete",
+    "version": "0.1.0",
     "publisher": "Janne252",
-    "description": "Provides Font Awesome 5.0.12 CSS class names as autocompletion items for any language.",
+    "description": "Provides Font Awesome 5.0.13/4.7.0 CSS class names as autocompletion items for any language.",
     "author": {
         "name": "Janne Varjo"
     },
@@ -13,24 +13,30 @@
     "contributes": {
         "configuration": {
             "type": "object",
-            "title": "Font Awesome 5 autocomplete configuration",
+            "title": "Font Awesome autocomplete configuration",
             "properties": {
-                "fontAwesome5Autocomplete.patterns": {
+                "fontAwesomeAutocomplete.version": {
+                    "type": "string",
+                    "enum": ["4", "5"],
+                    "default": "5",
+                    "description": "Font Awesome version to use."
+                },
+                "fontAwesomeAutocomplete.patterns": {
                     "type": "array",
                     "default": ["**/*.html"],
-                    "description": "List of glob patters that determine which files will have Font Awesome 5 Autocomplete enabled."
+                    "description": "List of glob patters that determine which files will have Font Awesome Autocomplete enabled."
                 },
-                "fontAwesome5Autocomplete.triggerCharacters": {
+                "fontAwesomeAutocomplete.triggerCharacters": {
                     "type": "array",
                     "default": ["f"],
-                    "description": "List of characters that trigger Font Awesome 5 Autocomplete."
+                    "description": "List of characters that trigger Font Awesome Autocomplete."
                 },
-                "fontAwesome5Autocomplete.preview.backgroundColor": {
+                "fontAwesomeAutocomplete.preview.backgroundColor": {
                     "type": "string",
                     "default": "#ffffff",
                     "description": "Background color of a Font Awesome icon preview. Supports any valid CSS color."
                 },
-                "fontAwesome5Autocomplete.preview.foregroundColor": {
+                "fontAwesomeAutocomplete.preview.foregroundColor": {
                     "type": "string",
                     "default": "#000000",
                     "description": "Foreground color of a Font Awesome icon preview. Supports any valid CSS color."
@@ -56,7 +62,7 @@
         "vscode": "^1.23.0"
     },
     "keywords": [
-        "Font Awesome", "Font Awesome 5", "class names", "auto-complete"
+        "Font Awesome", "Font Awesome 5", "font Awesome 4", "class names", "auto-complete"
     ],
     "activationEvents": [
         "*"

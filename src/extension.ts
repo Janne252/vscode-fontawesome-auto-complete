@@ -1,10 +1,12 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
+
 import CompletionProvider from './font-awesome/completion-provider';
 import HoverProvider from './font-awesome/hover-provider';
 import Documentation from './font-awesome/documentation';
+import { Version } from './font-awesome';
 
-const configurationSection = 'fontAwesome5Autocomplete';
-const documentation = new Documentation();
+const configurationSection = 'fontAwesomeAutocomplete';
 
 export function activate(context: vscode.ExtensionContext) 
 {
@@ -14,7 +16,8 @@ export function activate(context: vscode.ExtensionContext)
     {
         // Load config
         const config = vscode.workspace.getConfiguration(configurationSection);
-        
+        const version = config.get('version') as Version;
+
         // Turn loaded glob patterns into DocumentFilters
         let patterns = (config.get('patterns') as string[])
             .map(pattern => <vscode.DocumentFilter>{
@@ -24,12 +27,17 @@ export function activate(context: vscode.ExtensionContext)
         
         // Load trigger characters
         let triggerCharacters = config.get('triggerCharacters') as string[];
-        
-        // Load style
-        documentation.previewStyle = {
+        let previewStyle = {
             backgroundColor: config.get('preview.backgroundColor') as string,
             foregroundColor: config.get('preview.foregroundColor') as string
         };
+
+        // Load icon documentation
+        const documentation = new Documentation(
+            path.join(path.dirname(__dirname), `data/fontawesome-${version}`),
+            previewStyle,
+            version
+        );
 
         const providers = {
             completion: new CompletionProvider(documentation),
@@ -56,6 +64,7 @@ export function activate(context: vscode.ExtensionContext)
         disposables.forEach(o => context.subscriptions.push(o));
     };
 
+    // Whenever the configuration changes and affects the extension, reload everything
     vscode.workspace.onDidChangeConfiguration((e) =>
     {
         if (e.affectsConfiguration(configurationSection))

@@ -1,16 +1,20 @@
 import * as fs from 'fs';
-import * as path from 'path';
-import { IconEntry, PreviewStyle } from './';
+import { IconEntry, PreviewStyle, Version } from './';
 import Icon from './icon';
 import {CompletionItem, CompletionItemKind, Hover} from 'vscode';
 
 export type IconEntryCollection = {[key: string]: IconEntry};
 
+/** Represents Font Awesome icon documentation (collection of icon entries) */
 export default class Documentation
 {
     public readonly iconEntries: IconEntryCollection;
-    public readonly readmeLines: string[];
-    public readonly title: string;
+    public readonly version: Version;
+    public readonly rootPath: string;
+    public readonly previewStyle: PreviewStyle;
+
+    private _title: string;
+    public get title() { return this._title; }
 
     private _icons: Icon[];
     public get icons() { return this._icons; }
@@ -18,28 +22,27 @@ export default class Documentation
     private _mappedIcons: {[key: string]: Icon};
     public get mappedIcons() { return this._mappedIcons; }
 
-    private _previewStyle: PreviewStyle = {
-        backgroundColor: 'transparent',
-        foregroundColor: '#000000'
-    };
-
-    public get previewStyle() { return this._previewStyle; }
-    public set previewStyle(value: PreviewStyle)
+    constructor(rootPath: string, previewStyle: PreviewStyle, version: Version)
     {
-        this._previewStyle = value;
-        this.generateIcons();
-    }
+        this.rootPath = rootPath;
+        this.iconEntries = require(`${rootPath}/advanced-options/metadata/icons`) as {[key: string]: IconEntry};
+        let readmeLines = fs.readFileSync(`${rootPath}/README.md`, 'utf8').split('\n');
+        this.previewStyle = previewStyle;
+        this.version = version;
 
-    constructor(generateIcons = false)
-    {
-        this.iconEntries = require(`../../fontawesome/advanced-options/metadata/icons`) as {[key: string]: IconEntry};
-        this.readmeLines = fs.readFileSync(path.join(__dirname, `../../fontawesome/README.md`), 'utf8').split('\n');
-        this.title = this.readmeLines[0].substring('# '.length);        
+        this._title = readmeLines[0].substring('# '.length); 
         
-        if (generateIcons)
+        // Version migrations
+        switch(version)
         {
-            this.generateIcons();
+            case Version.v4:
+                this._title = this._title.substring(this._title.indexOf('[') + 1, this._title.lastIndexOf(']'));
+                break;
+            case Version.V5:
+                break;
         }
+
+        this.generateIcons();
     }
 
     private generateIcons()
@@ -53,7 +56,7 @@ export default class Documentation
             
             for (let style of entry.styles)
             {
-                let icon = new Icon(name, style, entry, this.previewStyle, this.title);
+                let icon = new Icon(this, name, style, entry);
                 this.icons.push(icon);
                 this.mappedIcons[icon.fullCssName] = icon;
             }
