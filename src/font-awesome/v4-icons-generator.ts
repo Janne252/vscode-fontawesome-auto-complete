@@ -46,7 +46,10 @@ export default () =>
         {
             unicode: icon.unicode,
             label: icon.name,
-            changes: [icon.created].map(o => o.toString()),
+            changes: [icon.created].map(o => {
+                let change = o.toString();
+                return change.length == 1 ? `${change}.0` : change
+            }),
             ligatures: [],
             search: {
                 terms: icon.filter,

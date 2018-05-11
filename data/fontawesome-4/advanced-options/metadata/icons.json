@@ -3,7 +3,7 @@
         "unicode": "f000",
         "label": "Glass",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -38,7 +38,7 @@
         "unicode": "f001",
         "label": "Music",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -70,7 +70,7 @@
         "unicode": "f002",
         "label": "Search",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -104,7 +104,7 @@
         "unicode": "f003",
         "label": "Envelope Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -140,7 +140,7 @@
         "unicode": "f004",
         "label": "Heart",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -173,7 +173,7 @@
         "unicode": "f005",
         "label": "Star",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -209,7 +209,7 @@
         "unicode": "f006",
         "label": "Star Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -245,7 +245,7 @@
         "unicode": "f007",
         "label": "User",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -279,7 +279,7 @@
         "unicode": "f008",
         "label": "Film",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -310,7 +310,7 @@
         "unicode": "f009",
         "label": "th-large",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -344,7 +344,7 @@
         "unicode": "f00a",
         "label": "th",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -378,7 +378,7 @@
         "unicode": "f00b",
         "label": "th-list",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -415,7 +415,7 @@
         "unicode": "f00c",
         "label": "Check",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -453,7 +453,7 @@
         "unicode": "f00d",
         "label": "Times",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -487,7 +487,7 @@
         "unicode": "f00e",
         "label": "Search Plus",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -521,7 +521,7 @@
         "unicode": "f010",
         "label": "Search Minus",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -555,7 +555,7 @@
         "unicode": "f011",
         "label": "Power Off",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -586,7 +586,7 @@
         "unicode": "f012",
         "label": "signal",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -618,7 +618,7 @@
         "unicode": "f013",
         "label": "cog",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -649,7 +649,7 @@
         "unicode": "f014",
         "label": "Trash Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -684,7 +684,7 @@
         "unicode": "f015",
         "label": "home",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -716,7 +716,7 @@
         "unicode": "f016",
         "label": "File Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -750,7 +750,7 @@
         "unicode": "f017",
         "label": "Clock Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -784,7 +784,7 @@
         "unicode": "f018",
         "label": "road",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -815,7 +815,7 @@
         "unicode": "f019",
         "label": "Download",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -846,7 +846,7 @@
         "unicode": "f01a",
         "label": "Arrow Circle Outlined Down",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -877,7 +877,7 @@
         "unicode": "f01b",
         "label": "Arrow Circle Outlined Up",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -904,7 +904,7 @@
         "unicode": "f01c",
         "label": "inbox",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -931,7 +931,7 @@
         "unicode": "f01d",
         "label": "Play Circle Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -958,7 +958,7 @@
         "unicode": "f01e",
         "label": "Repeat",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -990,7 +990,7 @@
         "unicode": "f021",
         "label": "refresh",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1022,7 +1022,7 @@
         "unicode": "f022",
         "label": "list-alt",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1059,7 +1059,7 @@
         "unicode": "f023",
         "label": "lock",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1092,7 +1092,7 @@
         "unicode": "f024",
         "label": "flag",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1125,7 +1125,7 @@
         "unicode": "f025",
         "label": "headphones",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1159,7 +1159,7 @@
         "unicode": "f026",
         "label": "volume-off",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1193,7 +1193,7 @@
         "unicode": "f027",
         "label": "volume-down",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1228,7 +1228,7 @@
         "unicode": "f028",
         "label": "volume-up",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1263,7 +1263,7 @@
         "unicode": "f029",
         "label": "qrcode",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1294,7 +1294,7 @@
         "unicode": "f02a",
         "label": "barcode",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1325,7 +1325,7 @@
         "unicode": "f02b",
         "label": "tag",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1356,7 +1356,7 @@
         "unicode": "f02c",
         "label": "tags",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1387,7 +1387,7 @@
         "unicode": "f02d",
         "label": "book",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1419,7 +1419,7 @@
         "unicode": "f02e",
         "label": "bookmark",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1450,7 +1450,7 @@
         "unicode": "f02f",
         "label": "print",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1477,7 +1477,7 @@
         "unicode": "f030",
         "label": "camera",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1510,7 +1510,7 @@
         "unicode": "f031",
         "label": "font",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1541,7 +1541,7 @@
         "unicode": "f032",
         "label": "bold",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1568,7 +1568,7 @@
         "unicode": "f033",
         "label": "italic",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1599,7 +1599,7 @@
         "unicode": "f034",
         "label": "text-height",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1626,7 +1626,7 @@
         "unicode": "f035",
         "label": "text-width",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1653,7 +1653,7 @@
         "unicode": "f036",
         "label": "align-left",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1684,7 +1684,7 @@
         "unicode": "f037",
         "label": "align-center",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1716,7 +1716,7 @@
         "unicode": "f038",
         "label": "align-right",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1747,7 +1747,7 @@
         "unicode": "f039",
         "label": "align-justify",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1778,7 +1778,7 @@
         "unicode": "f03a",
         "label": "list",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1815,7 +1815,7 @@
         "unicode": "f03b",
         "label": "Outdent",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1842,7 +1842,7 @@
         "unicode": "f03c",
         "label": "Indent",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1869,7 +1869,7 @@
         "unicode": "f03d",
         "label": "Video Camera",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1902,7 +1902,7 @@
         "unicode": "f03e",
         "label": "Picture Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -1929,7 +1929,7 @@
         "unicode": "f040",
         "label": "pencil",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -1962,7 +1962,7 @@
         "unicode": "f041",
         "label": "map-marker",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2001,7 +2001,7 @@
         "unicode": "f042",
         "label": "adjust",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2032,7 +2032,7 @@
         "unicode": "f043",
         "label": "tint",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2066,7 +2066,7 @@
         "unicode": "f044",
         "label": "Pencil Square Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2099,7 +2099,7 @@
         "unicode": "f045",
         "label": "Share Square Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2132,7 +2132,7 @@
         "unicode": "f046",
         "label": "Check Square Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2168,7 +2168,7 @@
         "unicode": "f047",
         "label": "Arrows",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2201,7 +2201,7 @@
         "unicode": "f048",
         "label": "step-backward",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2236,7 +2236,7 @@
         "unicode": "f049",
         "label": "fast-backward",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2271,7 +2271,7 @@
         "unicode": "f04a",
         "label": "backward",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2303,7 +2303,7 @@
         "unicode": "f04b",
         "label": "play",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2337,7 +2337,7 @@
         "unicode": "f04c",
         "label": "pause",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2368,7 +2368,7 @@
         "unicode": "f04d",
         "label": "stop",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2401,7 +2401,7 @@
         "unicode": "f04e",
         "label": "forward",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2433,7 +2433,7 @@
         "unicode": "f050",
         "label": "fast-forward",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2466,7 +2466,7 @@
         "unicode": "f051",
         "label": "step-forward",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2499,7 +2499,7 @@
         "unicode": "f052",
         "label": "eject",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -2526,7 +2526,7 @@
         "unicode": "f053",
         "label": "chevron-left",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2559,7 +2559,7 @@
         "unicode": "f054",
         "label": "chevron-right",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2592,7 +2592,7 @@
         "unicode": "f055",
         "label": "Plus Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2626,7 +2626,7 @@
         "unicode": "f056",
         "label": "Minus Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2660,7 +2660,7 @@
         "unicode": "f057",
         "label": "Times Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2693,7 +2693,7 @@
         "unicode": "f058",
         "label": "Check Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2729,7 +2729,7 @@
         "unicode": "f059",
         "label": "Question Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2763,7 +2763,7 @@
         "unicode": "f05a",
         "label": "Info Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2797,7 +2797,7 @@
         "unicode": "f05b",
         "label": "Crosshairs",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2828,7 +2828,7 @@
         "unicode": "f05c",
         "label": "Times Circle Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2861,7 +2861,7 @@
         "unicode": "f05d",
         "label": "Check Circle Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2897,7 +2897,7 @@
         "unicode": "f05e",
         "label": "ban",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2935,7 +2935,7 @@
         "unicode": "f060",
         "label": "arrow-left",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2967,7 +2967,7 @@
         "unicode": "f061",
         "label": "arrow-right",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -2999,7 +2999,7 @@
         "unicode": "f062",
         "label": "arrow-up",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3026,7 +3026,7 @@
         "unicode": "f063",
         "label": "arrow-down",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3057,7 +3057,7 @@
         "unicode": "f064",
         "label": "Share",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3084,7 +3084,7 @@
         "unicode": "f065",
         "label": "Expand",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3117,7 +3117,7 @@
         "unicode": "f066",
         "label": "Compress",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3152,7 +3152,7 @@
         "unicode": "f067",
         "label": "plus",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3186,7 +3186,7 @@
         "unicode": "f068",
         "label": "minus",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3223,7 +3223,7 @@
         "unicode": "f069",
         "label": "asterisk",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3254,7 +3254,7 @@
         "unicode": "f06a",
         "label": "Exclamation Circle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3289,7 +3289,7 @@
         "unicode": "f06b",
         "label": "gift",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3320,7 +3320,7 @@
         "unicode": "f06c",
         "label": "leaf",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3353,7 +3353,7 @@
         "unicode": "f06d",
         "label": "fire",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3386,7 +3386,7 @@
         "unicode": "f06e",
         "label": "Eye",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3419,7 +3419,7 @@
         "unicode": "f070",
         "label": "Eye Slash",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3455,7 +3455,7 @@
         "unicode": "f071",
         "label": "Exclamation Triangle",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3490,7 +3490,7 @@
         "unicode": "f072",
         "label": "plane",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3527,7 +3527,7 @@
         "unicode": "f073",
         "label": "calendar",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3561,7 +3561,7 @@
         "unicode": "f074",
         "label": "random",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3593,7 +3593,7 @@
         "unicode": "f075",
         "label": "comment",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3633,7 +3633,7 @@
         "unicode": "f076",
         "label": "magnet",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3660,7 +3660,7 @@
         "unicode": "f077",
         "label": "chevron-up",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3687,7 +3687,7 @@
         "unicode": "f078",
         "label": "chevron-down",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3714,7 +3714,7 @@
         "unicode": "f079",
         "label": "retweet",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3747,7 +3747,7 @@
         "unicode": "f07a",
         "label": "shopping-cart",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3781,7 +3781,7 @@
         "unicode": "f07b",
         "label": "Folder",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3808,7 +3808,7 @@
         "unicode": "f07c",
         "label": "Folder Open",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -3835,7 +3835,7 @@
         "unicode": "f07d",
         "label": "Arrows Vertical",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3866,7 +3866,7 @@
         "unicode": "f07e",
         "label": "Arrows Horizontal",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3897,7 +3897,7 @@
         "unicode": "f080",
         "label": "Bar Chart",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3929,7 +3929,7 @@
         "unicode": "f081",
         "label": "Twitter Square",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3961,7 +3961,7 @@
         "unicode": "f082",
         "label": "Facebook Square",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -3992,7 +3992,7 @@
         "unicode": "f083",
         "label": "camera-retro",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4025,7 +4025,7 @@
         "unicode": "f084",
         "label": "key",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4057,7 +4057,7 @@
         "unicode": "f085",
         "label": "cogs",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4088,7 +4088,7 @@
         "unicode": "f086",
         "label": "comments",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4128,7 +4128,7 @@
         "unicode": "f087",
         "label": "Thumbs Up Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4163,7 +4163,7 @@
         "unicode": "f088",
         "label": "Thumbs Down Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4197,7 +4197,7 @@
         "unicode": "f089",
         "label": "star-half",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4231,7 +4231,7 @@
         "unicode": "f08a",
         "label": "Heart Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4264,7 +4264,7 @@
         "unicode": "f08b",
         "label": "Sign Out",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4299,7 +4299,7 @@
         "unicode": "f08c",
         "label": "LinkedIn Square",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {},
@@ -4326,7 +4326,7 @@
         "unicode": "f08d",
         "label": "Thumb Tack",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4360,7 +4360,7 @@
         "unicode": "f08e",
         "label": "External Link",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4392,7 +4392,7 @@
         "unicode": "f090",
         "label": "Sign In",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4431,7 +4431,7 @@
         "unicode": "f091",
         "label": "trophy",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4466,7 +4466,7 @@
         "unicode": "f092",
         "label": "GitHub Square",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4497,7 +4497,7 @@
         "unicode": "f093",
         "label": "Upload",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4528,7 +4528,7 @@
         "unicode": "f094",
         "label": "Lemon Outlined",
         "changes": [
-            "1"
+            "1.0"
         ],
         "ligatures": [],
         "search": {
@@ -4559,7 +4559,7 @@
         "unicode": "f095",
         "label": "Phone",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4595,7 +4595,7 @@
         "unicode": "f096",
         "label": "Square Outlined",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4628,7 +4628,7 @@
         "unicode": "f097",
         "label": "Bookmark Outlined",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4659,7 +4659,7 @@
         "unicode": "f098",
         "label": "Phone Square",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4694,7 +4694,7 @@
         "unicode": "f099",
         "label": "Twitter",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4726,7 +4726,7 @@
         "unicode": "f09a",
         "label": "Facebook",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4757,7 +4757,7 @@
         "unicode": "f09b",
         "label": "GitHub",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4788,7 +4788,7 @@
         "unicode": "f09c",
         "label": "unlock",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4822,7 +4822,7 @@
         "unicode": "f09d",
         "label": "credit-card",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4858,7 +4858,7 @@
         "unicode": "f09e",
         "label": "rss",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4889,7 +4889,7 @@
         "unicode": "f0a0",
         "label": "HDD",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4923,7 +4923,7 @@
         "unicode": "f0a1",
         "label": "bullhorn",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4958,7 +4958,7 @@
         "unicode": "f0f3",
         "label": "bell",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -4991,7 +4991,7 @@
         "unicode": "f0a3",
         "label": "certificate",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5023,7 +5023,7 @@
         "unicode": "f0a4",
         "label": "Hand Outlined Right",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5058,7 +5058,7 @@
         "unicode": "f0a5",
         "label": "Hand Outlined Left",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5093,7 +5093,7 @@
         "unicode": "f0a6",
         "label": "Hand Outlined Up",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5125,7 +5125,7 @@
         "unicode": "f0a7",
         "label": "Hand Outlined Down",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5157,7 +5157,7 @@
         "unicode": "f0a8",
         "label": "Arrow Circle Left",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5189,7 +5189,7 @@
         "unicode": "f0a9",
         "label": "Arrow Circle Right",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5221,7 +5221,7 @@
         "unicode": "f0aa",
         "label": "Arrow Circle Up",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -5248,7 +5248,7 @@
         "unicode": "f0ab",
         "label": "Arrow Circle Down",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5279,7 +5279,7 @@
         "unicode": "f0ac",
         "label": "Globe",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5323,7 +5323,7 @@
         "unicode": "f0ad",
         "label": "Wrench",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5357,7 +5357,7 @@
         "unicode": "f0ae",
         "label": "Tasks",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5392,7 +5392,7 @@
         "unicode": "f0b0",
         "label": "Filter",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5424,7 +5424,7 @@
         "unicode": "f0b1",
         "label": "Briefcase",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5459,7 +5459,7 @@
         "unicode": "f0b2",
         "label": "Arrows Alt",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5497,7 +5497,7 @@
         "unicode": "f0c0",
         "label": "Users",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5530,7 +5530,7 @@
         "unicode": "f0c1",
         "label": "Link",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5561,7 +5561,7 @@
         "unicode": "f0c2",
         "label": "Cloud",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5592,7 +5592,7 @@
         "unicode": "f0c3",
         "label": "Flask",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5626,7 +5626,7 @@
         "unicode": "f0c4",
         "label": "Scissors",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -5653,7 +5653,7 @@
         "unicode": "f0c5",
         "label": "Files Outlined",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5686,7 +5686,7 @@
         "unicode": "f0c6",
         "label": "Paperclip",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5717,7 +5717,7 @@
         "unicode": "f0c7",
         "label": "Floppy Outlined",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -5744,7 +5744,7 @@
         "unicode": "f0c8",
         "label": "Square",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5776,7 +5776,7 @@
         "unicode": "f0c9",
         "label": "Bars",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5817,7 +5817,7 @@
         "unicode": "f0ca",
         "label": "list-ul",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5852,7 +5852,7 @@
         "unicode": "f0cb",
         "label": "list-ol",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5889,7 +5889,7 @@
         "unicode": "f0cc",
         "label": "Strikethrough",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -5916,7 +5916,7 @@
         "unicode": "f0cd",
         "label": "Underline",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -5943,7 +5943,7 @@
         "unicode": "f0ce",
         "label": "table",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -5976,7 +5976,7 @@
         "unicode": "f0d0",
         "label": "magic",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6009,7 +6009,7 @@
         "unicode": "f0d1",
         "label": "truck",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6040,7 +6040,7 @@
         "unicode": "f0d2",
         "label": "Pinterest",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6067,7 +6067,7 @@
         "unicode": "f0d3",
         "label": "Pinterest Square",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6094,7 +6094,7 @@
         "unicode": "f0d4",
         "label": "Google Plus Square",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6125,7 +6125,7 @@
         "unicode": "f0d5",
         "label": "Google Plus",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6156,7 +6156,7 @@
         "unicode": "f0d6",
         "label": "Money",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6192,7 +6192,7 @@
         "unicode": "f0d7",
         "label": "Caret Down",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6227,7 +6227,7 @@
         "unicode": "f0d8",
         "label": "Caret Up",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6259,7 +6259,7 @@
         "unicode": "f0d9",
         "label": "Caret Left",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6293,7 +6293,7 @@
         "unicode": "f0da",
         "label": "Caret Right",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6327,7 +6327,7 @@
         "unicode": "f0db",
         "label": "Columns",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6359,7 +6359,7 @@
         "unicode": "f0dc",
         "label": "Sort",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6390,7 +6390,7 @@
         "unicode": "f0dd",
         "label": "Sort Descending",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6424,7 +6424,7 @@
         "unicode": "f0de",
         "label": "Sort Ascending",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6455,7 +6455,7 @@
         "unicode": "f0e0",
         "label": "Envelope",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6491,7 +6491,7 @@
         "unicode": "f0e1",
         "label": "LinkedIn",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6518,7 +6518,7 @@
         "unicode": "f0e2",
         "label": "Undo",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6549,7 +6549,7 @@
         "unicode": "f0e3",
         "label": "Gavel",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6576,7 +6576,7 @@
         "unicode": "f0e4",
         "label": "Tachometer",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6603,7 +6603,7 @@
         "unicode": "f0e5",
         "label": "comment-o",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6643,7 +6643,7 @@
         "unicode": "f0e6",
         "label": "comments-o",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6683,7 +6683,7 @@
         "unicode": "f0e7",
         "label": "Lightning Bolt",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6715,7 +6715,7 @@
         "unicode": "f0e8",
         "label": "Sitemap",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6748,7 +6748,7 @@
         "unicode": "f0e9",
         "label": "Umbrella",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6775,7 +6775,7 @@
         "unicode": "f0ea",
         "label": "Clipboard",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6806,7 +6806,7 @@
         "unicode": "f0eb",
         "label": "Lightbulb Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -6838,7 +6838,7 @@
         "unicode": "f0ec",
         "label": "Exchange",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -6871,7 +6871,7 @@
         "unicode": "f0ed",
         "label": "Cloud Download",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -6902,7 +6902,7 @@
         "unicode": "f0ee",
         "label": "Cloud Upload",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -6933,7 +6933,7 @@
         "unicode": "f0f0",
         "label": "user-md",
         "changes": [
-            "2"
+            "2.0"
         ],
         "ligatures": [],
         "search": {
@@ -6967,7 +6967,7 @@
         "unicode": "f0f1",
         "label": "Stethoscope",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -6994,7 +6994,7 @@
         "unicode": "f0f2",
         "label": "Suitcase",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7029,7 +7029,7 @@
         "unicode": "f0a2",
         "label": "Bell Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7062,7 +7062,7 @@
         "unicode": "f0f4",
         "label": "Coffee",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7098,7 +7098,7 @@
         "unicode": "f0f5",
         "label": "Cutlery",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7134,7 +7134,7 @@
         "unicode": "f0f6",
         "label": "File Text Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7168,7 +7168,7 @@
         "unicode": "f0f7",
         "label": "Building Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7203,7 +7203,7 @@
         "unicode": "f0f8",
         "label": "hospital Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7234,7 +7234,7 @@
         "unicode": "f0f9",
         "label": "ambulance",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7267,7 +7267,7 @@
         "unicode": "f0fa",
         "label": "medkit",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7302,7 +7302,7 @@
         "unicode": "f0fb",
         "label": "fighter-jet",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7338,7 +7338,7 @@
         "unicode": "f0fc",
         "label": "beer",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7374,7 +7374,7 @@
         "unicode": "f0fd",
         "label": "H Square",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7406,7 +7406,7 @@
         "unicode": "f0fe",
         "label": "Plus Square",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7440,7 +7440,7 @@
         "unicode": "f100",
         "label": "Angle Double Left",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7475,7 +7475,7 @@
         "unicode": "f101",
         "label": "Angle Double Right",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7510,7 +7510,7 @@
         "unicode": "f102",
         "label": "Angle Double Up",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7541,7 +7541,7 @@
         "unicode": "f103",
         "label": "Angle Double Down",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7572,7 +7572,7 @@
         "unicode": "f104",
         "label": "angle-left",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7605,7 +7605,7 @@
         "unicode": "f105",
         "label": "angle-right",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7638,7 +7638,7 @@
         "unicode": "f106",
         "label": "angle-up",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7669,7 +7669,7 @@
         "unicode": "f107",
         "label": "angle-down",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7700,7 +7700,7 @@
         "unicode": "f108",
         "label": "Desktop",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7736,7 +7736,7 @@
         "unicode": "f109",
         "label": "Laptop",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7769,7 +7769,7 @@
         "unicode": "f10a",
         "label": "tablet",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7801,7 +7801,7 @@
         "unicode": "f10b",
         "label": "Mobile Phone",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7838,7 +7838,7 @@
         "unicode": "f10c",
         "label": "Circle Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -7865,7 +7865,7 @@
         "unicode": "f10d",
         "label": "quote-left",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -7892,7 +7892,7 @@
         "unicode": "f10e",
         "label": "quote-right",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -7919,7 +7919,7 @@
         "unicode": "f110",
         "label": "Spinner",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7951,7 +7951,7 @@
         "unicode": "f111",
         "label": "Circle",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -7983,7 +7983,7 @@
         "unicode": "f112",
         "label": "Reply",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -8010,7 +8010,7 @@
         "unicode": "f113",
         "label": "GitHub Alt",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {
@@ -8041,7 +8041,7 @@
         "unicode": "f114",
         "label": "Folder Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -8068,7 +8068,7 @@
         "unicode": "f115",
         "label": "Folder Open Outlined",
         "changes": [
-            "3"
+            "3.0"
         ],
         "ligatures": [],
         "search": {},
@@ -10008,7 +10008,7 @@
         "unicode": "f158",
         "label": "Russian Ruble (RUB)",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {},
@@ -11458,7 +11458,7 @@
         "unicode": "f18c",
         "label": "Pagelines",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {
@@ -11494,7 +11494,7 @@
         "unicode": "f18d",
         "label": "Stack Exchange",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {},
@@ -11521,7 +11521,7 @@
         "unicode": "f18e",
         "label": "Arrow Circle Outlined Right",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {
@@ -11553,7 +11553,7 @@
         "unicode": "f190",
         "label": "Arrow Circle Outlined Left",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {
@@ -11585,7 +11585,7 @@
         "unicode": "f191",
         "label": "Caret Square Outlined Left",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {
@@ -11617,7 +11617,7 @@
         "unicode": "f192",
         "label": "Dot Circle Outlined",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {
@@ -11650,7 +11650,7 @@
         "unicode": "f193",
         "label": "Wheelchair",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {
@@ -11682,7 +11682,7 @@
         "unicode": "f194",
         "label": "Vimeo Square",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {},
@@ -11709,7 +11709,7 @@
         "unicode": "f195",
         "label": "Turkish Lira (TRY)",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {},
@@ -11736,7 +11736,7 @@
         "unicode": "f196",
         "label": "Plus Square Outlined",
         "changes": [
-            "4"
+            "4.0"
         ],
         "ligatures": [],
         "search": {

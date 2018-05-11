@@ -40,6 +40,9 @@ export default class Icon
             <path fill="${documentation.previewStyle.foregroundColor}" d="${svgPath}"/>
         </svg>
         `;
+        
+
+        let changes = entry.changes.map(o => `\`${o}\``).join(', ');
 
         this.documentation = new vscode.MarkdownString([
             `![](data:image/svg+xml;utf8,${previewSvg} | width=64 height=64)`,
@@ -48,6 +51,7 @@ export default class Icon
             `|------------------------------|---------------------------------------------------------|`,
             `| **Icon**                     | ${entry.label} &nbsp; &nbsp; \`free\` \`${style}\`      |`,
             `| **Unicode**                  | \`${unicode}\`                                          |`,
+            `| **Changes**                  | ${changes}                                              |`,
             `| **Reference &nbsp; &nbsp; ** | [${onlineUrl}](https://${onlineUrl})                    |`,
             '',
             documentation.title
