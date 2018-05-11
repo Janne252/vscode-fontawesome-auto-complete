@@ -8,6 +8,14 @@ import { Version } from './font-awesome';
 
 const configurationSection = 'fontAwesomeAutocomplete';
 
+enum ConfigKey
+{
+    Version = 'version',
+    TriggerCharacters = 'triggerCharacters',
+    PreviewBackgroundColor = 'preview.backgroundColor',
+    PreviewForegroundColor = 'preview.foregroundColor'
+}
+
 export function activate(context: vscode.ExtensionContext) 
 {
     let disposables: vscode.Disposable[] = [];
@@ -16,7 +24,7 @@ export function activate(context: vscode.ExtensionContext)
     {
         // Load config
         const config = vscode.workspace.getConfiguration(configurationSection);
-        const version = config.get('version') as Version;
+        const version = config.get(ConfigKey.Version) as Version;
 
         // Turn loaded glob patterns into DocumentFilters
         let patterns = (config.get('patterns') as string[])
@@ -26,10 +34,10 @@ export function activate(context: vscode.ExtensionContext)
             });
         
         // Load trigger characters
-        let triggerCharacters = config.get('triggerCharacters') as string[];
+        let triggerCharacters = config.get(ConfigKey.TriggerCharacters) as string[];
         let previewStyle = {
-            backgroundColor: config.get('preview.backgroundColor') as string,
-            foregroundColor: config.get('preview.foregroundColor') as string
+            backgroundColor: config.get(ConfigKey.PreviewBackgroundColor) as string,
+            foregroundColor: config.get(ConfigKey.PreviewForegroundColor) as string
         };
 
         // Load icon documentation
@@ -74,9 +82,53 @@ export function activate(context: vscode.ExtensionContext)
     });
 
     registerProviders();
+    runVersionMigrations();
 }
 
 export function deactivate() 
 {
 
+}
+
+function runVersionMigrations()
+{
+    // Version 0.0.5 -> 0.0.1
+    const v0_0_5 = () =>
+    {
+        const sectionName = 'fontAwesome5Autocomplete';
+        const config = vscode.workspace.getConfiguration(sectionName);
+
+        enum Action
+        {
+            Fix = 'Fix'
+        }
+        
+        for(let name in ConfigKey)
+        {
+            let key = ConfigKey[name];
+            let value = config.get(key);
+            if (value != null)
+            {
+                vscode.window.showErrorMessage(
+                    `[Font Awesome Autocomplete] settings.json entry "${sectionName}.${key}" is depricated.`,
+                    Action.Fix
+                ).then((action) =>
+                {
+                    if (action == Action.Fix)
+                    {
+                        vscode.commands.executeCommand(
+                            'vscode.open', 
+                            vscode.Uri.parse(
+                                'https://github.com/Janne252/vscode-fontawesome-auto-complete/blob/master/migrations/v0.0.5-to-0.1.0.md'
+                            )
+                        );
+                    }
+                });
+
+                break;
+            }
+        }
+    }
+
+    v0_0_5();
 }

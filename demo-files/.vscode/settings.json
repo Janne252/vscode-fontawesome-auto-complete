@@ -5,5 +5,5 @@
         "**/*.html"
     ],
     "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
-    "fontAwesomeAutocomplete.preview.foregroundColor": "#000000"
+    "fontAwesomeAutocomplete.preview.foregroundColor": "#000000",
 }
