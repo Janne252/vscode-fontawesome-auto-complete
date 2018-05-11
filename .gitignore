@@ -2,3 +2,4 @@ out
 node_modules
 .vscode-test/
 *.vsix
+data/fontawesome-4/svg/*.svg
