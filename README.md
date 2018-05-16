@@ -1,4 +1,4 @@
-# Font Awesome 5 auto-complete
+# Font Awesome auto-complete
 
 ## Features
 Provides Font Awesome 5.0.13/4.7.0 CSS class names as autocompletion items for any language (see [configuration](#configuration))
@@ -21,8 +21,8 @@ The following options can be set in the settings to configure the behavior of th
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html"
     ],
-    // List of characters that trigger Font Awesome 5 Autocomplete.
-    "fontAwesome5Autocomplete.triggerCharacters": [
+    // List of characters that trigger Font Awesome Autocomplete.
+    "fontAwesomeAutocomplete.triggerCharacters": [
         "f"
     ],
     // Background color of a Font Awesome icon preview. Supports any valid CSS color.
