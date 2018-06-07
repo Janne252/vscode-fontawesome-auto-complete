@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.1.2] - 2018-06-07
+- Fixed broken icon preview (appeared in vscode 1.24.0)
+
 ## [0.1.1] - 2018-05-11
 - Added "Changes" display to the documentation
 - Fixed Font Awesome 4.7.0 "changes" version display for major versions ("1" -> "1.0", etc.)
