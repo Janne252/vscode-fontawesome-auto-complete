@@ -35,7 +35,7 @@ export default class Icon
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="${viewbox.join(' ')}"
-            style="background-color: ${documentation.previewStyle.backgroundColor};transform: scale%280.75%29;padding:8px;"
+            style="background-color: ${documentation.previewStyle.backgroundColor};transform: scale(0.75);padding:8px;"
         >
             <path fill="${documentation.previewStyle.foregroundColor}" d="${svgPath}"/>
         </svg>
@@ -43,16 +43,23 @@ export default class Icon
         
 
         let changes = entry.changes.map(o => `\`${o}\``).join(', ');
+        
+        let data = 'data:image/svg+xml;utf8;base64,' + Buffer.from(previewSvg).toString('base64');
 
         this.documentation = new vscode.MarkdownString([
-            `![](data:image/svg+xml;utf8,${previewSvg} | width=64 height=64)`,
+            `![](${data}%20|%20width=64%20height=64)`,
             '',
-            `|                              |                                                         |`,
+            /*`|     &nbsp;      |         &nbsp;      |   &nbsp;    |
+            | ------------- |:-------------:| -----:|
+            | col 3 is      | right-aligned | $1600 |
+            | col 2 is      | centered      |   $12 |
+            | zebra stripes | are neat      |    $1 |`,*/
+            `| &nbsp;                       | &nbsp;                                                  |`,
             `|------------------------------|---------------------------------------------------------|`,
             `| **Icon**                     | ${entry.label} &nbsp; &nbsp; \`free\` \`${style}\`      |`,
             `| **Unicode**                  | \`${unicode}\`                                          |`,
             `| **Changes**                  | ${changes}                                              |`,
-            `| **Reference &nbsp; &nbsp; ** | [${onlineUrl}](https://${onlineUrl})                    |`,
+            `| **Reference &nbsp; &nbsp;**  | [${onlineUrl}](https://${onlineUrl})                    |`,
             '',
             documentation.title
         ].join('\n'));

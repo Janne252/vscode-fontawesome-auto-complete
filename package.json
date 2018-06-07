@@ -17,18 +17,25 @@
             "properties": {
                 "fontAwesomeAutocomplete.version": {
                     "type": "string",
-                    "enum": ["4", "5"],
+                    "enum": [
+                        "4",
+                        "5"
+                    ],
                     "default": "5",
                     "description": "Font Awesome version to use."
                 },
                 "fontAwesomeAutocomplete.patterns": {
                     "type": "array",
-                    "default": ["**/*.html"],
+                    "default": [
+                        "**/*.html"
+                    ],
                     "description": "List of glob patters that determine which files will have Font Awesome Autocomplete enabled."
                 },
                 "fontAwesomeAutocomplete.triggerCharacters": {
                     "type": "array",
-                    "default": ["f"],
+                    "default": [
+                        "f"
+                    ],
                     "description": "List of characters that trigger Font Awesome Autocomplete."
                 },
                 "fontAwesomeAutocomplete.preview.backgroundColor": {
@@ -62,7 +69,11 @@
         "vscode": "^1.23.0"
     },
     "keywords": [
-        "Font Awesome", "Font Awesome 5", "font Awesome 4", "class names", "auto-complete"
+        "Font Awesome",
+        "Font Awesome 5",
+        "font Awesome 4",
+        "class names",
+        "auto-complete"
     ],
     "activationEvents": [
         "*"
