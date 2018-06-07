@@ -43,18 +43,18 @@ export default class Icon
         
 
         let changes = entry.changes.map(o => `\`${o}\``).join(', ');
-        
-        let data = 'data:image/svg+xml;utf8;base64,' + Buffer.from(previewSvg).toString('base64');
+        let iconBase64String = this.svgXmlStringToBase64DataUri(previewSvg);
+        let iconSize = {
+            width: 64, height: 64
+        };
+        let iconMarkdownAttributes = this.encodeSpaces(
+            ` | width=${iconSize.width} height=${iconSize.height}`
+        );
 
         this.documentation = new vscode.MarkdownString([
-            `![](${data}%20|%20width=64%20height=64)`,
+            `![](${iconBase64String}${iconMarkdownAttributes})`,
             '',
-            /*`|     &nbsp;      |         &nbsp;      |   &nbsp;    |
-            | ------------- |:-------------:| -----:|
-            | col 3 is      | right-aligned | $1600 |
-            | col 2 is      | centered      |   $12 |
-            | zebra stripes | are neat      |    $1 |`,*/
-            `| &nbsp;                       | &nbsp;                                                  |`,
+            `| &nbsp;                       |                                                         |`,
             `|------------------------------|---------------------------------------------------------|`,
             `| **Icon**                     | ${entry.label} &nbsp; &nbsp; \`free\` \`${style}\`      |`,
             `| **Unicode**                  | \`${unicode}\`                                          |`,
@@ -63,5 +63,15 @@ export default class Icon
             '',
             documentation.title
         ].join('\n'));
+    }
+
+    private svgXmlStringToBase64DataUri(svg: string)
+    {
+        return 'data:image/svg+xml;utf8;base64,' + Buffer.from(svg).toString('base64');
+    }
+
+    private encodeSpaces(content: string)
+    {
+        return content.replace(/ /g, '%20');
     }
 }
