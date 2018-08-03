@@ -32,3 +32,19 @@ The following options can be set in the settings to configure the behavior of th
 }
 ```
 The extension listens for changes in the settings and auto-reloads itself when necessary. 
+
+## Installation
+ - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
+
+
+## Development
+[VS Code Docs - Publishing Extensions](https://code.visualstudio.com/docs/extensions/publish-extension)
+### Packaging (local .vsix file)
+```bash
+$ vsce package
+```
+
+### Publishing
+```bash
+$ vsce publish
+```
