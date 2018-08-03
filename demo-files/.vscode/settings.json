@@ -2,8 +2,9 @@
     "git.enabled": false,
     "fontAwesomeAutocomplete.version": "5",
     "fontAwesomeAutocomplete.patterns": [
-        "**/*.html"
+        "**/*.html", "**/*.js"
     ],
-    "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
-    "fontAwesomeAutocomplete.preview.foregroundColor": "#000000",
+    "fontAwesomeAutocomplete.triggerCharacters": [
+        "a"
+    ]
 }
