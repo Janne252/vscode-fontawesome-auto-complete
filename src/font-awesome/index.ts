@@ -1,15 +1,13 @@
 
-export enum Version
-{
+export enum Version {
     v4 = '4',
-    V5 = '5'
+    V5 = '5',
 }
-/** 
- * Available FontAwesome icon styles. 
+/**
+ * Available FontAwesome icon styles.
  * @see https://fontawesome.com/how-to-use
  */
-export enum IconStyle
-{
+export enum IconStyle {
     solid = 'solid',
     regular = 'regular',
     light = 'light',
@@ -21,8 +19,7 @@ export enum IconStyle
  * Available FontAwesome icon style prefixes.
  * @see https://fontawesome.com/how-to-use
  */
-export const IconStylePrefix: {[style in IconStyle]: string} = 
-{
+export const iconStylePrefix: {[style in IconStyle]: string} =  {
     [IconStyle.solid]: 'fas',
     [IconStyle.regular]: 'far',
     [IconStyle.light]: 'fal',
@@ -30,14 +27,13 @@ export const IconStylePrefix: {[style in IconStyle]: string} =
     [IconStyle.v4]: 'fa',
 };
 
-export const AvailablePrefixes = Object.keys(IconStylePrefix).map(key => IconStylePrefix[key as IconStyle]);
+export const availablePrefixes = Object.keys(iconStylePrefix).map(key => iconStylePrefix[key as IconStyle]);
 
 /**
  * Represents the stucture of an icon entry
  * in fontawesome/advanced-options/metadata/icons.json
  */
-export interface IconEntry
-{
+export interface IconEntry {
     changes: string[];
     ligatures: any[];
     search: {
@@ -48,12 +44,11 @@ export interface IconEntry
     label: string;
     svg: {
         [style in IconStyle]: IconEntrySvg
-    }
+    };
 }
 
-export interface IconEntrySvg
-{
-    last_modified: number,
+export interface IconEntrySvg {
+    last_modified: number;
     raw: string;
     viewBox: [string, string, string, string];
     width: number;
@@ -61,8 +56,7 @@ export interface IconEntrySvg
     path: string;
 }
 
-export interface PreviewStyle
-{
+export interface PreviewStyle {
     backgroundColor: string;
     foregroundColor: string;
 }
