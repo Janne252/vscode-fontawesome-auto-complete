@@ -1,5 +1,8 @@
 # Font Awesome auto-complete
 
+[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/Janne252.fontawesome-autocomplete.svg)](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
+
+
 ## Features
 Provides Font Awesome 5.2.0/4.7.0 CSS class names as autocompletion items for any language (see [configuration](#configuration))
 
