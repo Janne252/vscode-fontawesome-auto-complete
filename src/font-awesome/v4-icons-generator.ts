@@ -8,7 +8,7 @@ import { IconEntry, IconStyle, IconEntrySvg } from '../font-awesome';
     1. Obtain Font Awesome 4.7.0 data: svg font and icons.yml (converted to .json with an online tool)
     2. Place generated .svg images in data/fontawesome-4/svg
     3. use font-blast to extract the individual svg images
-    4. Use the generated css code to match the missed icon names to their unicode values
+    4. Use the generated css code to match the missed icon names to their unicode values (output to svg-filename-charcode-map as one entry per line, tab-separated, e.g. glass	f000)
     5. Use the previously generated unicode-filename map to figure out which svg file belongs to which icon in the yml file
     6. output generated json
 */
