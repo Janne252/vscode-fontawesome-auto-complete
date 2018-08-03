@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.1.3] - 2018-06-07
+- Updated to Font Awesome 5.2.0 (web)
+
 ## [0.1.2] - 2018-06-07
 - Fixed broken icon preview (appeared in vscode 1.24.0)
 

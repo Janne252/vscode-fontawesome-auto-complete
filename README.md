@@ -1,7 +1,7 @@
 # Font Awesome auto-complete
 
 ## Features
-Provides Font Awesome 5.0.13/4.7.0 CSS class names as autocompletion items for any language (see [configuration](#configuration))
+Provides Font Awesome 5.2.0/4.7.0 CSS class names as autocompletion items for any language (see [configuration](#configuration))
 
 ## Example usage
 ![](video/demo-autocomplete.gif)
