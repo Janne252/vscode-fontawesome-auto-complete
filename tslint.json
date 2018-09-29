@@ -17,8 +17,8 @@
         "member-ordering": [true, {
             "order": [
                 "private-static-field",
-                "private-instance-field",
                 "public-static-field",
+                "private-instance-field",
                 "public-instance-field",
                 "private-constructor",
                 "public-constructor",
@@ -45,6 +45,7 @@
         "max-line-length": {
             "severity": "warning",
             "options": 120
-        }
+        },
+        "max-classes-per-file": false,
     }
 }
