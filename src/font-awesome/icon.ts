@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { IconEntry, IconStyle, iconStylePrefix, Version } from ".";
+import { IconEntry, IconStyle, iconStylePrefix, Version, CategoryEntry } from ".";
 import Documentation from './documentation';
 
 /** Represents an icon that can be used as the source of Hover or Completion item. */
@@ -9,7 +9,7 @@ export default class Icon {
     /** Full CSS name of the icon, e.g. fas fa-user */
     public readonly fullCssName: string;
 
-    constructor(documentation: Documentation, name: string, style: IconStyle, entry: IconEntry) {
+    constructor(documentation: Documentation, name: string, style: IconStyle, entry: IconEntry, categories: CategoryEntry[]) {
         const prefix = iconStylePrefix[style];
         const unicode = entry.unicode;
         const svgPath = entry.svg[style].path;
@@ -52,12 +52,12 @@ export default class Icon {
             '',
             `| &nbsp;                       |                                                         |`,
             `|------------------------------|---------------------------------------------------------|`,
-            `| **Icon**                     | ${entry.label} &nbsp; &nbsp; \`free\` \`${style}\`      |`,
+            `| **Icon**                     | [${entry.label}](https://${onlineUrl})    &nbsp; &nbsp; \`free\` \`${style}\`      |`,
+            `| **Categories**               | ${categories.map(o => `\`${o.label}\``).join(', ')}     |`,
             `| **Unicode**                  | \`${unicode}\`                                          |`,
             `| **Changes**                  | ${changes}                                              |`,
-            `| **Reference &nbsp; &nbsp;**  | [${onlineUrl}](https://${onlineUrl})                    |`,
             '',
-            documentation.title,
+            `[${documentation.title}](${documentation.config.url})`,
         ].join('\n'));
     }
 

@@ -60,3 +60,17 @@ export interface PreviewStyle {
     backgroundColor: string;
     foregroundColor: string;
 }
+
+export interface CategoryEntry {
+    icons: string[];
+    label: string;
+}
+
+export interface ShimEntry {
+    /** Shim */
+    0: string;
+    /** Suggested cateogry */
+    1: string | null;
+    /** Suggested name */
+    2: string | null;
+}

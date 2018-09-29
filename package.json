@@ -1,9 +1,9 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome Autocomplete",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "publisher": "Janne252",
-    "description": "Provides Font Awesome 5.2.0/4.7.0 CSS class names as autocompletion items for any language.",
+    "description": "Provides Font Awesome 5.3.1/4.7.0 CSS class names as autocompletion items for any language.",
     "author": {
         "name": "Janne Varjo"
     },
@@ -22,7 +22,7 @@
                         "5"
                     ],
                     "default": "5",
-                    "description": "Font Awesome version to use."
+                    "description": "Font Awesome major version to use (either 4 or 5)."
                 },
                 "fontAwesomeAutocomplete.patterns": {
                     "type": "array",
@@ -31,12 +31,10 @@
                     ],
                     "description": "List of glob patters that determine which files will have Font Awesome Autocomplete enabled."
                 },
-                "fontAwesomeAutocomplete.triggerCharacters": {
-                    "type": "array",
-                    "default": [
-                        "f"
-                    ],
-                    "description": "List of characters that trigger Font Awesome Autocomplete."
+                "fontAwesomeAutocomplete.triggerWord": {
+                    "type": "string",
+                    "default": "fa-",
+                    "description": "A word that triggers the auto completion of Font Awesome icons."
                 },
                 "fontAwesomeAutocomplete.preview.backgroundColor": {
                     "type": "string",
@@ -47,6 +45,14 @@
                     "type": "string",
                     "default": "#000000",
                     "description": "Foreground color of a Font Awesome icon preview. Supports any valid CSS color."
+                },
+                "fontAwesomeAutocomplete.triggerCharacters": {
+                    "type": "array",
+                    "default": [
+                        "f"
+                    ],
+                    "description": "List of characters that trigger Font Awesome Autocomplete.",
+                    "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 1.0.4. This setting can be safely removed."
                 }
             }
         }
@@ -73,7 +79,8 @@
         "Font Awesome 5",
         "font Awesome 4",
         "class names",
-        "auto-complete"
+        "auto-complete",
+        "icon preview"
     ],
     "activationEvents": [
         "*"

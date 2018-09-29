@@ -2,9 +2,10 @@
     "git.enabled": false,
     "fontAwesomeAutocomplete.version": "5",
     "fontAwesomeAutocomplete.patterns": [
-        "**/*.html", "**/*.js"
+        "**/*.html", "**/*.js", "**.ts"
     ],
     "fontAwesomeAutocomplete.triggerCharacters": [
-        "a"
-    ]
+        "-"
+    ],
+    "fontAwesomeAutocomplete.triggerWord": "fa-"
 }
