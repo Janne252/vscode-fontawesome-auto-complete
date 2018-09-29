@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.1.4] - 2018-09-29
+- Updated to Font Awesome 5.3.1 (web)
+- Auto completion item list no longer contains Font Awesome icons by default.
+   - Instead a trigger word (defaults to "`fa-`") is used to determine when the list is included.
+   - Implemented by replacing the setting **`fontAwesomeAutocomplete`.`triggerCharacters`** with **`fontAwesomeAutocomplete`.`triggerWord`**.
+   - See [Configuration in README.md](README.md#Configuration) for more info.
+- Added list of categories to icon documentation (Font Awesome 5 only for now)
+- Moved documentation link to the icon name (to save vertical space) 
+
 ## [0.1.3] - 2018-06-07
 - Updated to Font Awesome 5.2.0 (web)
 
