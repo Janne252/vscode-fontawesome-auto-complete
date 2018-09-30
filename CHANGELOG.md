@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.1.5] - 2018-09-29
+- Fixed an issue where a warning for deprecated setting was displayed to the user even after removing the setting.
+
 ## [0.1.4] - 2018-09-29
 - Updated to Font Awesome 5.3.1 (web)
 - Auto completion item list no longer contains Font Awesome icons by default.

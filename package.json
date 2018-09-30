@@ -1,7 +1,7 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome Autocomplete",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "publisher": "Janne252",
     "description": "Provides Font Awesome 5.3.1/4.7.0 CSS class names as autocompletion items for any language.",
     "author": {
@@ -49,7 +49,7 @@
                 "fontAwesomeAutocomplete.triggerCharacters": {
                     "type": "array",
                     "default": [
-                        "f"
+                        
                     ],
                     "description": "List of characters that trigger Font Awesome Autocomplete.",
                     "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 1.0.4. This setting can be safely removed."

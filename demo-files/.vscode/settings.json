@@ -4,8 +4,5 @@
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html", "**/*.js", "**.ts"
     ],
-    "fontAwesomeAutocomplete.triggerCharacters": [
-        "-"
-    ],
     "fontAwesomeAutocomplete.triggerWord": "fa-"
 }

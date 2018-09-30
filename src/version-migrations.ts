@@ -43,9 +43,16 @@ export default class VersionMigrations {
         const settingName = 'triggerCharacters';
 
         const config = vscode.workspace.getConfiguration(sectionName);
-        const value = config.get(settingName);
+        const value = config.inspect(settingName);
 
-        if (value != null) {
+        if (
+            value != null && 
+            (
+                value.globalValue != null ||
+                value.workspaceFolderValue != null ||
+                value.workspaceValue != null
+            )            
+        ) {
             vscode.window.showErrorMessage(
                 `[Font Awesome Autocomplete] settings.json entry "${sectionName}.${settingName}" is deprecated and can be safely removed (replaced by triggerWord).`,
                 MigrationAction.Remove
