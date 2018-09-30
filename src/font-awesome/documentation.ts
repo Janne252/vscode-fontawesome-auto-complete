@@ -1,5 +1,4 @@
-import * as fs from 'fs';
-import {CompletionItem, CompletionItemKind, Hover, TextEdit} from 'vscode';
+import {CompletionItem, CompletionItemKind, Hover} from 'vscode';
 import { IconEntry, PreviewStyle, Version, CategoryEntry, ShimEntry } from './';
 import Icon from './icon';
 
