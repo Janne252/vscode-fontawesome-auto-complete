@@ -43,7 +43,12 @@ Font Awesome icons only appear in the auto completion item list if the current w
 ## Installation
  - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
 
+## Change Log
+ - See [CHANGELOG.md](CHANGELOG.md)
 
+## License
+ - See [LICENCE.md](LICENCE.md)
+ 
 ## Development
 [VS Code Docs - Publishing Extensions](https://code.visualstudio.com/docs/extensions/publish-extension)
 ### Packaging (local .vsix file)
