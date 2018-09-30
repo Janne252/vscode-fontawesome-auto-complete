@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.6] - 2018-??-??
+- Auto-completion trigger character is now based on the last character of trigger word.
+   - See [Configuration in README.md](README.md#Configuration) for more info.
+
 ## [0.1.5] - 2018-09-29
 - Fixed an issue where a warning for deprecated setting was displayed to the user even after removing the setting.
 
