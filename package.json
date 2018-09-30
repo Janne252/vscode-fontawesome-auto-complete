@@ -34,22 +34,25 @@
                 "fontAwesomeAutocomplete.triggerWord": {
                     "type": "string",
                     "default": "fa-",
+                    "minLength": 1,
                     "description": "A word that triggers the auto completion of Font Awesome icons."
                 },
                 "fontAwesomeAutocomplete.preview.backgroundColor": {
                     "type": "string",
                     "default": "#ffffff",
+                    "minLength": 3,
                     "description": "Background color of a Font Awesome icon preview. Supports any valid CSS color."
                 },
                 "fontAwesomeAutocomplete.preview.foregroundColor": {
                     "type": "string",
                     "default": "#000000",
+                    "minLength": 3,
                     "description": "Foreground color of a Font Awesome icon preview. Supports any valid CSS color."
                 },
                 "fontAwesomeAutocomplete.triggerCharacters": {
                     "type": "array",
                     "default": [
-                        
+                        "f"
                     ],
                     "description": "List of characters that trigger Font Awesome Autocomplete.",
                     "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 1.0.4. This setting can be safely removed."

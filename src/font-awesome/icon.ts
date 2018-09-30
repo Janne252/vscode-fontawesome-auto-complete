@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { IconEntry, IconStyle, iconStylePrefix, Version, CategoryEntry } from ".";
+import { IconEntry, IconStyle, iconStylePrefix, FontAwesomeVersion, CategoryEntry } from ".";
 import Documentation from './documentation';
 
 /** Represents an icon that can be used as the source of Hover or Completion item. */
@@ -20,10 +20,10 @@ export default class Icon {
 
         // Version migrations
         switch (documentation.version) {
-            case Version.v4:
+            case FontAwesomeVersion.v4:
                 onlineUrl = `fontawesome.com/v4.7.0/icon/${name}/`;
                 break;
-            case Version.V5:
+            case FontAwesomeVersion.V5:
                 onlineUrl = `fontawesome.com/icons/${name}?style=${style}`;
                 break;
         }

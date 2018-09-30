@@ -1,5 +1,5 @@
 
-export enum Version {
+export enum FontAwesomeVersion {
     v4 = '4',
     V5 = '5',
 }

@@ -1,6 +1,6 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { Version } from './font-awesome';
+import { FontAwesomeVersion } from './font-awesome';
 import CompletionProvider from './font-awesome/completion-provider';
 import Documentation from './font-awesome/documentation';
 import HoverProvider from './font-awesome/hover-provider';
@@ -18,22 +18,7 @@ export enum ConfigKey {
 
 function registerProviders(context: vscode.ExtensionContext) {
     // Load config
-    const config = vscode.workspace.getConfiguration(configurationSection);
-    const version = config.get(ConfigKey.Version) as Version;
-
-    // Turn loaded glob patterns into DocumentFilters
-    const patterns = (config.get('patterns') as string[])
-        .map(pattern => <vscode.DocumentFilter> {
-            pattern,
-            scheme: 'file',
-        });
-
-    // Load trigger characters
-    const triggerWord = config.get(ConfigKey.TriggerWord) as string;
-    const previewStyle = {
-        backgroundColor: config.get(ConfigKey.PreviewBackgroundColor) as string,
-        foregroundColor: config.get(ConfigKey.PreviewForegroundColor) as string,
-    };
+    const {version, triggerWord, previewStyle, patterns} = loadConfiguration();
 
     // Load icon documentation
     const documentation = new Documentation(
@@ -49,13 +34,59 @@ function registerProviders(context: vscode.ExtensionContext) {
 
     unregisterProviders(context);
 
+    const triggerChar = triggerWord[triggerWord.length - 1];
+
     disposables.push(
-        vscode.languages.registerCompletionItemProvider(patterns, providers.completion, ...['-']),
+        vscode.languages.registerCompletionItemProvider(patterns, providers.completion, ...[triggerChar]),
         vscode.languages.registerHoverProvider(patterns, providers.hover),
     );
 
     disposables.forEach(o => context.subscriptions.push(o));
 };
+
+/** Loads and validates the extension configuration. */
+function loadConfiguration() {
+    const config = vscode.workspace.getConfiguration(configurationSection);
+    const version = config.get(ConfigKey.Version) as FontAwesomeVersion;
+    let triggerWord = config.get(ConfigKey.TriggerWord) as string;
+
+    const triggerWordSetting = config.inspect(ConfigKey.TriggerWord);
+    let defaultTriggerWord = 'fa-';
+
+    if (triggerWordSetting != null && triggerWordSetting.defaultValue != null) {
+        defaultTriggerWord = triggerWordSetting.defaultValue as string;
+    } else {
+        defaultTriggerWord = 'fa-';
+    }
+        // Turn loaded glob patterns into DocumentFilters
+        const patterns = (config.get('patterns') as string[])
+        .map(pattern => <vscode.DocumentFilter> {
+            pattern,
+            scheme: 'file',
+        });
+
+    const previewStyle = {
+        backgroundColor: config.get(ConfigKey.PreviewBackgroundColor) as string,
+        foregroundColor: config.get(ConfigKey.PreviewForegroundColor) as string,
+    };
+
+    if (config.triggerWord.length == 0) {
+        vscode.window.showErrorMessage(
+            `Setting ${configurationSection}.${ConfigKey.TriggerWord} cannot be empty - falling back to "${defaultTriggerWord}"!`,
+            'Restore'
+        ).then(value => {
+            if (value == 'Restore') {
+                config.update(ConfigKey.TriggerWord, defaultTriggerWord);
+            }
+        });
+
+        triggerWord = defaultTriggerWord;
+    }
+
+    return {
+        version, triggerWord, patterns, previewStyle
+    }
+}
 
 function unregisterProviders(context: vscode.ExtensionContext) {
     // If the providers are about to be registered again, remove previous instances first

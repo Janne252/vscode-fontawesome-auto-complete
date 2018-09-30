@@ -1,5 +1,5 @@
 import {CompletionItem, CompletionItemKind, Hover} from 'vscode';
-import { IconEntry, PreviewStyle, Version, CategoryEntry, ShimEntry } from './';
+import { IconEntry, PreviewStyle, FontAwesomeVersion, CategoryEntry, ShimEntry } from './';
 import Icon from './icon';
 
 export interface IconEntryCollection {[key: string]: IconEntry; }
@@ -15,13 +15,13 @@ export default class Documentation {
     public readonly iconEntries: IconEntryCollection;
     public readonly categories: CategoryCollection;
     public readonly shims: ShimCollection;
-    public readonly version: Version;
+    public readonly version: FontAwesomeVersion;
     public readonly rootPath: string;
     public readonly previewStyle: PreviewStyle;
     public readonly config: {version: string, url: string};
 
 
-    constructor(rootPath: string, previewStyle: PreviewStyle, version: Version) {
+    constructor(rootPath: string, previewStyle: PreviewStyle, version: FontAwesomeVersion) {
         this.rootPath = rootPath;
         this.iconEntries = require(`${rootPath}/metadata/icons`);
         this.previewStyle = previewStyle;
@@ -31,11 +31,11 @@ export default class Documentation {
 
         // Version support
         switch (version) {
-            case Version.v4:
+            case FontAwesomeVersion.v4:
                 this.categories = {};
                 this.shims = [];
                 break;
-            case Version.V5:
+            case FontAwesomeVersion.V5:
                 this.categories = require(`${rootPath}/metadata/categories`);
                 this.shims = require(`${rootPath}/metadata/shims`);
                 break;
