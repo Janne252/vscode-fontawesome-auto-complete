@@ -7,8 +7,48 @@ enum MigrationAction {
 }
 
 export default class VersionMigrations {
+    
+    static RunAll() {
+        this.v0_0_5();
+        this.v0_1_4();
+    }
+
+    // Version 0.1.3 -> 0.1.4
+    static v0_1_4() {
+        const sectionName = 'fontAwesomeAutocomplete';
+        const settingName = 'triggerCharacters';
+
+        const config = vscode.workspace.getConfiguration(sectionName);
+        const value = config.inspect(settingName);
+
+        if (
+            value != null && 
+            (
+                value.globalValue != null ||
+                value.workspaceFolderValue != null ||
+                value.workspaceValue != null
+            )            
+        ) {
+            vscode.window.showErrorMessage(
+                `[Font Awesome Autocomplete] settings.json entry "${sectionName}.${settingName}" is deprecated and can be safely removed (replaced by triggerWord).`,
+                MigrationAction.Remove
+            ).then(action => {
+                if (action === MigrationAction.Remove) {
+                    Promise.all([
+                        value.globalValue != null ? config.update(settingName, undefined, vscode.ConfigurationTarget.Global) : Promise.resolve(),
+                        value.workspaceValue != null ? config.update(settingName, undefined, vscode.ConfigurationTarget.Workspace) : Promise.resolve(),
+                        value.workspaceFolderValue != null ? config.update(settingName, undefined, vscode.ConfigurationTarget.WorkspaceFolder) : Promise.resolve()
+                    ]).then(() => {
+                        vscode.window.showInformationMessage('Deprecated setting removed successfully!')
+                    }, (error) => {
+                        vscode.window.showErrorMessage(`An error occurred while trying to remove the setting. Please try removing it manually in the settings editor. Details: \n\n${error}`)
+                    });
+                }
+            });
+        }
+    }
+
     // Version 0.0.5 -> 0.1.0
-    // tslint:disable-next-line
     static v0_0_5() {
         const sectionName = 'fontAwesome5Autocomplete';
         const config = vscode.workspace.getConfiguration(sectionName);
@@ -37,34 +77,4 @@ export default class VersionMigrations {
         }
     };
 
-    // Version 0.1.3 -> 0.1.4
-    static v0_1_4() {
-        const sectionName = 'fontAwesomeAutocomplete';
-        const settingName = 'triggerCharacters';
-
-        const config = vscode.workspace.getConfiguration(sectionName);
-        const value = config.inspect(settingName);
-
-        if (
-            value != null && 
-            (
-                value.globalValue != null ||
-                value.workspaceFolderValue != null ||
-                value.workspaceValue != null
-            )            
-        ) {
-            vscode.window.showErrorMessage(
-                `[Font Awesome Autocomplete] settings.json entry "${sectionName}.${settingName}" is deprecated and can be safely removed (replaced by triggerWord).`,
-                MigrationAction.Remove
-            ).then(action => {
-                if (action === MigrationAction.Remove) {
-                    config.update(settingName, undefined).then(() => {
-                        vscode.window.showInformationMessage('Deprecated setting removed successfully!')
-                    }, (error) => {
-                        vscode.window.showErrorMessage(`Failed to remove the setting. Please try removing it manually in the settings editor.`)
-                    });
-                }
-            });
-        }
-    }
 }

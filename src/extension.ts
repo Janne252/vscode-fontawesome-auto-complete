@@ -14,11 +14,12 @@ export enum ConfigKey {
     TriggerWord = 'triggerWord',
     PreviewBackgroundColor = 'preview.backgroundColor',
     PreviewForegroundColor = 'preview.foregroundColor',
+    DisableTriggerWordAutoClearPatterns = 'disableTriggerWordAutoClearPatterns',
 }
 
 function registerProviders(context: vscode.ExtensionContext) {
     // Load config
-    const {version, triggerWord, previewStyle, patterns} = loadConfiguration();
+    const {version, triggerWord, disableTriggerWordAutoClearPatterns, previewStyle, patterns} = loadConfiguration();
 
     // Load icon documentation
     const documentation = new Documentation(
@@ -28,11 +29,13 @@ function registerProviders(context: vscode.ExtensionContext) {
     );
 
     const providers = {
-        completion: new CompletionProvider(documentation, triggerWord),
+        completion: new CompletionProvider(
+            documentation, 
+            triggerWord, 
+            disableTriggerWordAutoClearPatterns
+        ),
         hover: new HoverProvider(documentation),
     };
-
-    unregisterProviders(context);
 
     const triggerChar = triggerWord[triggerWord.length - 1];
 
@@ -51,6 +54,8 @@ function loadConfiguration() {
     let triggerWord = config.get(ConfigKey.TriggerWord) as string;
 
     const triggerWordSetting = config.inspect(ConfigKey.TriggerWord);
+    const disableTriggerWordAutoClearPatterns = config.get(ConfigKey.DisableTriggerWordAutoClearPatterns) as string[];
+
     let defaultTriggerWord = 'fa-';
 
     if (triggerWordSetting != null && triggerWordSetting.defaultValue != null) {
@@ -84,7 +89,7 @@ function loadConfiguration() {
     }
 
     return {
-        version, triggerWord, patterns, previewStyle
+        version, triggerWord, disableTriggerWordAutoClearPatterns, patterns, previewStyle
     }
 }
 
@@ -100,23 +105,23 @@ function unregisterProviders(context: vscode.ExtensionContext) {
     }
 }
 
+function clearAndLoadExtension(context: vscode.ExtensionContext) {
+    unregisterProviders(context);
+    registerProviders(context);
+}
+
 export function activate(context: vscode.ExtensionContext) {
     // Whenever the configuration changes and affects the extension, reload everything
     vscode.workspace.onDidChangeConfiguration(e => {
         if (e.affectsConfiguration(configurationSection)) {
-            registerProviders(context);
+            clearAndLoadExtension(context);
         }
     });
 
-    registerProviders(context);
-    runVersionMigrations();
+    clearAndLoadExtension(context);
+    VersionMigrations.RunAll();
 }
 
 export function deactivate() {
 
-}
-
-function runVersionMigrations() {
-   VersionMigrations.v0_0_5();
-   VersionMigrations.v0_1_4();
 }
