@@ -1,4 +1,6 @@
 # Change Log
+## [0.1.7] - 2018-04-10
+- Improved VS Code Extension Marketplace integration
 
 ## [0.1.6] - 2018-04-10
 - Auto-completion trigger character is now based on the last character of the trigger word.

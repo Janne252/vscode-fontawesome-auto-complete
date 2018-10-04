@@ -1,9 +1,9 @@
 {
     "name": "fontawesome-autocomplete",
-    "displayName": "Font Awesome Autocomplete",
-    "version": "0.1.6",
+    "displayName": "Font Awesome Auto-complete & Preview",
+    "version": "0.1.7",
     "publisher": "Janne252",
-    "description": "Provides Font Awesome 5.3.1/4.7.0 CSS class names as autocompletion items for any language.",
+    "description": "Auto-complete & preview Font Awesome icons in any language.",
     "author": {
         "name": "Janne Varjo"
     },
@@ -72,7 +72,7 @@
         "color": "#1e1c1e",
         "theme": "dark"
     },
-    "license": "SEE LICENSE IN LICENSE.txt",
+    "license": "SEE LICENSE IN LICENSE.md",
     "bugs": {
         "url": "https://github.com/Janne252/vscode-fontawesome-auto-complete/issues"
     },
@@ -90,6 +90,13 @@
         "class names",
         "auto-complete",
         "icon preview"
+    ],
+    "badges": [
+        {
+            "url": "https://img.shields.io/vscode-marketplace/v/Janne252.fontawesome-autocomplete.svg",
+            "href": "https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete",
+            "description": "Extension version"
+        }
     ],
     "activationEvents": [
         "*"
