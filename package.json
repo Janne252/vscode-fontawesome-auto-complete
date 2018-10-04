@@ -1,7 +1,7 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome Autocomplete",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "publisher": "Janne252",
     "description": "Provides Font Awesome 5.3.1/4.7.0 CSS class names as autocompletion items for any language.",
     "author": {
@@ -35,7 +35,14 @@
                     "type": "string",
                     "default": "fa-",
                     "minLength": 1,
-                    "description": "A word that triggers the auto completion of Font Awesome icons."
+                    "description": "A word that triggers the auto completion of Font Awesome icons. Last character of the trigger word is also the trigger character for auto completion menu."
+                },
+                "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": {
+                    "type": "array",
+                    "default": [
+                        "**/*.html"
+                    ],
+                    "description": "A list of glob patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the auto completion list."
                 },
                 "fontAwesomeAutocomplete.preview.backgroundColor": {
                     "type": "string",
