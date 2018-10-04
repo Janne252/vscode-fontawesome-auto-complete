@@ -84,12 +84,15 @@ export default class Documentation {
 }
 
 export class FontAwesomeCompletionItem extends CompletionItem {
+    readonly fullCssName: string;
+
     constructor(icon: Icon) {
         super(
-            icon.fullCssName,
-            CompletionItemKind.Reference
+            icon.fullCssName,               // label
+            CompletionItemKind.Reference    // kind
         )
         this.documentation = icon.documentation;
+        this.fullCssName = icon.fullCssName;
     }
 }
 
