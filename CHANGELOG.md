@@ -1,8 +1,12 @@
 # Change Log
 
-## [0.1.6] - 2018-??-??
-- Auto-completion trigger character is now based on the last character of trigger word.
-   - See [Configuration in README.md](README.md#Configuration) for more info.
+## [0.1.6] - 2018-04-10
+- Auto-completion trigger character is now based on the last character of the trigger word.
+   - See [Configuration in README.md](README.md#configuration) for more info.
+- Fixed an issue where auto-completing an icon class name resulted in inconsistent behavior in different langauge modes (e.g. `html` vs `javascript`)
+  - Fixed by introducing a new configuration option for the extension: `disableTriggerWordAutoClearPatterns`
+  - This configuration option is a list of glob patterns that automatically remove the trigger word when a completion item is selected. Defaults to `**/*.html`. If you spot a language that supports it (i.e. when auto-completing a class name with this extension, the output is malformed), please open an issue!
+- Improved version migration (from extension version 0.1.4)
 
 ## [0.1.5] - 2018-09-29
 - Fixed an issue where a warning for deprecated setting was displayed to the user even after removing the setting.
@@ -12,7 +16,7 @@
 - Auto completion item list no longer contains Font Awesome icons by default.
    - Instead a trigger word (defaults to "`fa-`") is used to determine when the list is included.
    - Implemented by replacing the setting **`fontAwesomeAutocomplete`.`triggerCharacters`** with **`fontAwesomeAutocomplete`.`triggerWord`**.
-   - See [Configuration in README.md](README.md#Configuration) for more info.
+   - See [Configuration in README.md](README.md#configuration) for more info.
 - Added list of categories to icon documentation (Font Awesome 5 only for now)
 - Moved documentation link to the icon name (to save vertical space) 
 

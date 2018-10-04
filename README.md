@@ -27,8 +27,10 @@ The following options can be set in the settings to configure the behavior of th
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html"
     ],
-    // A word that triggers the auto completion of Font Awesome icons.
+    // A word that triggers the auto completion of Font Awesome icons. Last character of the trigger word is also the trigger character for auto completion menu.
     "fontAwesomeAutocomplete.triggerWord": "fa-",
+    // A list of glob patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the auto completion list.
+    "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": ["**/*.html"],
     // Background color of a Font Awesome icon preview. Supports any valid CSS color.
     "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
     // Foreground color of a Font Awesome icon preview. Supports any valid CSS color.
@@ -38,7 +40,9 @@ The following options can be set in the settings to configure the behavior of th
 The extension listens for changes in the settings and auto-reloads itself when necessary. 
 
 ### Tips
-Font Awesome icons only appear in the auto completion item list if the current word starts with the value of **`fontAwesomeAutocomplete`.`triggerWord`**, e.g. "`fa-`".
+- Font Awesome icons only appear in the auto completion item list if the current word starts with the value of **`fontAwesomeAutocomplete`.`triggerWord`**, e.g. "`fa-`".
+   - The last character of the trigger word (e.g. `-`) also works as the trigger character for the auto completion menu.
+- If a selected icon class name is malformed (parts of it missing), try adding the current file extension as a glob pattern (e.g. `"**/*.html"`) to the `disableTriggerWordAutoClearPatterns` setting. If that doesn't help, please open an issue!
 
 ## Installation
  - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
