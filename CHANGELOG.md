@@ -3,7 +3,7 @@
 ## [0.1.6] - 2018-04-10
 - Auto-completion trigger character is now based on the last character of the trigger word.
    - See [Configuration in README.md](README.md#configuration) for more info.
-- Fixed an issue where auto-completing an icon class name resulted in inconsistent behavior in different langauge modes (e.g. `html` vs `javascript`)
+- Fixed an issue where auto-completing an icon class name resulted in inconsistent behavior in different language modes (e.g. `html` vs `javascript`)
   - Fixed by introducing a new configuration option for the extension: `disableTriggerWordAutoClearPatterns`
   - This configuration option is a list of glob patterns that automatically remove the trigger word when a completion item is selected. Defaults to `**/*.html`. If you spot a language that supports it (i.e. when auto-completing a class name with this extension, the output is malformed), please open an issue!
 - Improved version migration (from extension version 0.1.4)
