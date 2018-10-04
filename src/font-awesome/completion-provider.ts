@@ -28,9 +28,20 @@ export default class CompletionProvider implements CompletionItemProvider {
     }
 
     private isAutoClearTriggerWordEnabledFor(document: TextDocument) {
-        return this.disableTriggerWordAutoClearRegexp.findIndex(
-            pattern => pattern.test(document.fileName)
-        ) == -1;
+        for (const pattern of this.disableTriggerWordAutoClearRegexp) {
+            const isMatch = pattern.test(document.fileName);
+            // Patterns with the g flag must be reset to prevent odd behavior!
+            if (pattern.flags.indexOf('g') != -1) {
+                // Reset lastIndex so that we can use the same RegExp pattern again
+                pattern.lastIndex = 0;
+            }
+            if (isMatch) {
+                return false;
+            }
+        }
+
+        // No pattern matched - auto clear is enabled
+        return true;
     }
 
     public provideCompletionItems(
@@ -49,12 +60,9 @@ export default class CompletionProvider implements CompletionItemProvider {
         const range = (exactRange || fullRange) as Range;
         const word = document.getText(range);
         const isAutoClearTriggerWordEnabled = this.isAutoClearTriggerWordEnabledFor(document);
-
+        
         if (word.startsWith(this.triggerWord)) {
             return this.completionItems.map(item => {
-                // Clone so that edits don't carry over to the "raw" list
-                item = {...item};
-                
                 // For example html in vscode natively removes the "trigger word" when an auto completion item is selected.
                 // Other langauges can't do it, we'll have to remove it manually
                 // If the document language id is not present in the list of languages that do it automatically, do it manually
@@ -62,6 +70,8 @@ export default class CompletionProvider implements CompletionItemProvider {
                     item.additionalTextEdits = [
                         TextEdit.replace(range, ''),
                     ];
+                } else {
+                    delete item.additionalTextEdits; 
                 }
 
                 return item;
