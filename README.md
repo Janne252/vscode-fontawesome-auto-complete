@@ -1,8 +1,10 @@
 # Font Awesome auto-complete
 
+![](image/promo-01.png)
+
 [![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/Janne252.fontawesome-autocomplete.svg)](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
 
-Provides Font Awesome 5.3.1/4.7.0 CSS class names as autocompletion items for any language (see [configuration](#configuration))
+Provides Font Awesome 5.3.1/4.7.0 CSS class names as auto-completion items with live preview for any language (see [configuration](#configuration))
 
 ## Default usage
 Type "`fa-`" (without quotes) to start auto-completing icons. If the icon preview is not showing up (as shown in the GIFs below), press `Ctrl+Space` (default hotkey) or press the ![](image/vscode-gui-read-more.png) "Read More..." button to expand the details view.
