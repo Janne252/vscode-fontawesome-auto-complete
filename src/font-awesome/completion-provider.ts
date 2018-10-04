@@ -1,4 +1,4 @@
-import { CancellationToken, CompletionContext, CompletionItemProvider, Position, TextDocument, Range, TextEdit, languages } from "vscode";
+import { CancellationToken, CompletionContext, CompletionItemProvider, Position, TextDocument, Range, TextEdit } from "vscode";
 import Documentation, { FontAwesomeCompletionItem } from './documentation';
 import { globPatternToRegExp } from "../helper/glob";
 
