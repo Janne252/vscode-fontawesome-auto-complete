@@ -1,7 +1,6 @@
 # Font Awesome auto-complete
 
 ![](image/promo-01.png)
-
 [![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/Janne252.fontawesome-autocomplete.svg)](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
 
 Provides Font Awesome 5.3.1/4.7.0 CSS class names as auto-completion items with live preview for any language (see [configuration](#configuration))
