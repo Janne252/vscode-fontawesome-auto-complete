@@ -32,7 +32,7 @@ export default class Icon {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="${viewbox.join(' ')}"
-            style="background-color: ${documentation.previewStyle.backgroundColor};transform: scale(0.75);padding:8px;"
+            style="background-color: ${documentation.previewStyle.backgroundColor};padding:0px;"
         >
             <path fill="${documentation.previewStyle.foregroundColor}" d="${svgPath}"/>
         </svg>
