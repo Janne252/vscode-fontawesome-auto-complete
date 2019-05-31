@@ -20,7 +20,14 @@ export default class CompletionProvider implements CompletionItemProvider {
         }
 
         this.triggerWord = triggerWord;
-        this.triggerWordRegexp = new RegExp(triggerWord);
+        // Support for alphanumeric suffix, including dashes. This ensures that the completion menu
+        // provides items even after entering additional dashes, e.g.
+        // fa-user (initial completion list triggered), followed by -circle (secondary completion list trigger.)
+        // unfortunately the completion list is further filtered by VS Code's word separator setting, which seems to limit
+        // the filter word to the closest dash, meaning the the secondary completion item list is filtered by
+        // circle, not fa-user-cirlce.
+        // https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/6
+        this.triggerWordRegexp = new RegExp(`${triggerWord}[a-zA-Z0-9-]*`);
         this.disableTriggerWordAutoClearPatterns = disableTriggerWordAutoClearPatterns;
         this.disableTriggerWordAutoClearRegexp = this.disableTriggerWordAutoClearPatterns.map(
             pattern => globPatternToRegExp(pattern)
@@ -43,7 +50,7 @@ export default class CompletionProvider implements CompletionItemProvider {
         // No pattern matched - auto clear is enabled
         return true;
     }
-
+    
     public provideCompletionItems(
         document: TextDocument,
         position: Position,
@@ -61,11 +68,28 @@ export default class CompletionProvider implements CompletionItemProvider {
         const word = document.getText(range);
         const isAutoClearTriggerWordEnabled = this.isAutoClearTriggerWordEnabledFor(document);
         
+        console.log(word);
+        
         if (word.startsWith(this.triggerWord)) {
+            
+            // VS Code natively removes the "trigger word" when an auto completion item is selected for some languages, for example HTML.
+            // Other langauges can't do it, we'll have to remove it manually
+            // If the document language id is not present in the list of languages that do it automatically, do it manually
+            if (isAutoClearTriggerWordEnabled) {
+                const result: FontAwesomeCompletionItem[] = [];
+                const additionalTextEdits = [TextEdit.replace(range, '')];
+
+                for (let i = 0; i < this.completionItems.length; i++) {
+                    result.push(
+                        {...this.completionItems[i], additionalTextEdits}
+                    );
+                }
+
+                return result;
+            } else {
+                return this.completionItems;
+            }
             return this.completionItems.map(item => {
-                // For example html in vscode natively removes the "trigger word" when an auto completion item is selected.
-                // Other langauges can't do it, we'll have to remove it manually
-                // If the document language id is not present in the list of languages that do it automatically, do it manually
                 if (isAutoClearTriggerWordEnabled) {
                     item.additionalTextEdits = [
                         TextEdit.replace(range, ''),
