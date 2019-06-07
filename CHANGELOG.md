@@ -1,8 +1,10 @@
 # Change Log
 
-## [0.1.8] - 2019-05-31
-- Adjusted icon preview to fully display the icon
+## [0.1.8] - 2019-06-07
+- Adjusted/fixed icon preview to fully display the icon
 - Fixed an issue where typing additional dashes resulted in 0 completion items (see [#6](https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/6))
+- [internal] Icon categories are now parsed from the source `.yml` instead of manually generating a `.json` per update (this should eventually help with Font Awesome Pro support, if it's ever requested)
+- Updated Font Awesome 5 icons to version `5.9.0`
 
 ## [0.1.7] - 2018-04-10
 - Improved VS Code Extension Marketplace integration
