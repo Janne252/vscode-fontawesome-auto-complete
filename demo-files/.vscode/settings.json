@@ -2,10 +2,11 @@
     "git.enabled": false,
     "fontAwesomeAutocomplete.version": "5",
     "fontAwesomeAutocomplete.patterns": [
-        "**/*.html", "**/*.js", "**.ts"
+        "**/*.html", "**/*.js", "**.ts", "**/*.vue"
     ],
     "fontAwesomeAutocomplete.triggerWord": "fa-",
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": [
         "**/*.html"
-    ]
+    ],
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
 }

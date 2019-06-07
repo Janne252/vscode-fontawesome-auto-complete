@@ -1,4 +1,9 @@
 # Change Log
+
+## [0.1.8] - 2019-05-31
+- Adjusted icon preview to fully display the icon
+- Fixed an issue where typing additional dashes resulted in 0 completion items (see [#6](https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/6))
+
 ## [0.1.7] - 2018-04-10
 - Improved VS Code Extension Marketplace integration
 
