@@ -1,6 +1,6 @@
 <template>
     <div>
-        <font-awesome-icon icon="fas fa-address-book"
+        <i class="fas fa-arrow-alt-circle-right" />
     </div>
 </template>
 

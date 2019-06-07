@@ -7,6 +7,5 @@
     "fontAwesomeAutocomplete.triggerWord": "fa-",
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": [
         "**/*.html"
-    ],
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
+    ]
 }
