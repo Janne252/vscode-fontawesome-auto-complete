@@ -50,12 +50,12 @@ export default class Icon {
         this.documentation = new vscode.MarkdownString([
             `![](${iconBase64String}${iconMarkdownAttributes})`,
             '',
-            `| &nbsp;                       |                                                         |`,
-            `|------------------------------|---------------------------------------------------------|`,
-            `| **Icon**                     | [${entry.label}](https://${onlineUrl})    &nbsp; &nbsp; \`free\` \`${style}\`      |`,
-            `| **Categories**               | ${categories.map(o => `\`${o.label}\``).join(', ')}     |`,
-            `| **Unicode**                  | \`${unicode}\`                                          |`,
-            `| **Changes**                  | ${changes}                                              |`,
+            `| &nbsp;                       |                                                                               |`,
+            `|------------------------------|---------------------------------------------------------                      |`,
+            `| **Icon**                     | [${entry.label}](https://${onlineUrl})    &nbsp; &nbsp; \`free\` \`${style}\` |`,
+            `| **Categories**               | ${categories.map(o => `\`${o.label}\``).join(', ') || '&nbsp;_N/A_'}          |`,
+            `| **Unicode**                  | \`${unicode}\`                                                                |`,
+            `| **Changes**                  | ${changes}                                                                    |`,
             '',
             `[${documentation.title}](${documentation.config.url})`,
         ].join('\n'));
