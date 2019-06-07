@@ -5,6 +5,7 @@ import Icon from './icon';
 export interface IconEntryCollection {[key: string]: IconEntry; }
 export interface CategoryCollection {[key: string]: CategoryEntry; }
 export type ShimCollection = ShimEntry[];
+
 /** Represents Font Awesome icon documentation (collection of icon entries) */
 export default class Documentation {
     public readonly title: string;
@@ -19,7 +20,6 @@ export default class Documentation {
     public readonly rootPath: string;
     public readonly previewStyle: PreviewStyle;
     public readonly config: {version: string, url: string};
-
 
     constructor(rootPath: string, previewStyle: PreviewStyle, version: FontAwesomeVersion) {
         this.rootPath = rootPath;
@@ -91,6 +91,7 @@ export class FontAwesomeCompletionItem extends CompletionItem {
             icon.fullCssName,               // label
             CompletionItemKind.Reference    // kind
         )
+        
         this.documentation = icon.documentation;
         this.fullCssName = icon.fullCssName;
     }
