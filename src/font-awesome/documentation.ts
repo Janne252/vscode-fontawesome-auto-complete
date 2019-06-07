@@ -1,4 +1,6 @@
 import {CompletionItem, CompletionItemKind, Hover} from 'vscode';
+import * as YAML from 'yaml';
+import * as fs from 'fs';
 import { IconEntry, PreviewStyle, FontAwesomeVersion, CategoryEntry, ShimEntry } from './';
 import Icon from './icon';
 
@@ -36,7 +38,7 @@ export default class Documentation {
                 this.shims = [];
                 break;
             case FontAwesomeVersion.V5:
-                this.categories = require(`${rootPath}/metadata/categories`);
+                this.categories = YAML.parse(fs.readFileSync(`${rootPath}/metadata/categories.yml`, {encoding: 'utf8'}));
                 this.shims = require(`${rootPath}/metadata/shims`);
                 break;
         }
