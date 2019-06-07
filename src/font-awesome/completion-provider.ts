@@ -67,9 +67,7 @@ export default class CompletionProvider implements CompletionItemProvider {
         const range = (exactRange || fullRange) as Range;
         const word = document.getText(range);
         const isAutoClearTriggerWordEnabled = this.isAutoClearTriggerWordEnabledFor(document);
-        
-        console.log(word);
-        
+       
         if (word.startsWith(this.triggerWord)) {
             
             // VS Code natively removes the "trigger word" when an auto completion item is selected for some languages, for example HTML.
@@ -89,17 +87,6 @@ export default class CompletionProvider implements CompletionItemProvider {
             } else {
                 return this.completionItems;
             }
-            return this.completionItems.map(item => {
-                if (isAutoClearTriggerWordEnabled) {
-                    item.additionalTextEdits = [
-                        TextEdit.replace(range, ''),
-                    ];
-                } else {
-                    delete item.additionalTextEdits; 
-                }
-
-                return item;
-            });
         }        
     }
 }
