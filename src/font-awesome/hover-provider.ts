@@ -1,18 +1,35 @@
 import { Hover, HoverProvider as IHoverProvider, Position, Range, TextDocument } from 'vscode';
-import { availablePrefixes } from '.';
+import { availablePrefixes, prefix } from '.';
 import Documentation from './documentation';
+import Icon from './icon';
+import { InsertionTemplate } from './transformation';
 
-const fullClassNamePattern = new RegExp(`(${availablePrefixes.join('|')}|fa)( fa[\\w-]+)`, 'i');
+const fullClassNamePattern = new RegExp(`(${availablePrefixes.join('|')})( ${prefix}[\\w-]+)`, 'i');
 
 export default class HoverProvider implements IHoverProvider {
     public readonly documentation: Documentation;
+    public readonly insertionTemplates: InsertionTemplate[];
+    
+    private readonly renderedIconInsertionMap: {[key: string]: Icon} = {};
+    private readonly renderedInsertionTemplateMaps: {[key: string]: boolean} = {};
 
-    constructor(documentation: Documentation) {
+    constructor(documentation: Documentation, insertionTemplates: InsertionTemplate[]) {
         this.documentation = documentation;
+        this.insertionTemplates = insertionTemplates;
+        for (const icon of documentation.icons) {
+            this.renderedIconInsertionMap[icon.fullCssName] = icon;
+        }
     }
 
     public provideHover(document: TextDocument, position: Position) {
-        const range = document.getWordRangeAtPosition(position, fullClassNamePattern) as Range;
+        let range: Range;
+        const insertionTemplate = InsertionTemplate.resolve(document, this.insertionTemplates);
+
+        if (insertionTemplate) {
+            range = document.getWordRangeAtPosition(position, insertionTemplate.templatePattern) as Range;
+        } else {
+            range = document.getWordRangeAtPosition(position, fullClassNamePattern) as Range;
+        }
 
         if (range == null) {
             return null;
@@ -20,8 +37,16 @@ export default class HoverProvider implements IHoverProvider {
 
         const text = document.getText(range);
 
-        if (text in this.documentation.mappedIcons) {
-            return new Hover(this.documentation.mappedIcons[text].documentation, range);
+        // Lazy included insertion template support for hover
+        if (insertionTemplate && !(insertionTemplate.alias in this.renderedInsertionTemplateMaps)) {
+            this.renderedInsertionTemplateMaps[insertionTemplate.alias] = true;
+            for (const icon of this.documentation.icons) {
+                this.renderedIconInsertionMap[insertionTemplate.render(icon)] = icon;
+            }   
+        }
+
+        if (text in this.renderedIconInsertionMap) {
+            return new Hover(this.renderedIconInsertionMap[text].documentation, range);
         }
     }
 }

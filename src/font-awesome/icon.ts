@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { IconEntry, IconStyle, iconStylePrefix, FontAwesomeVersion, CategoryEntry } from ".";
+import { IconEntry, IconStyle, iconStylePrefix, FontAwesomeVersion, CategoryEntry, prefix } from ".";
 import Documentation from './documentation';
 
 /** Represents an icon that can be used as the source of Hover or Completion item. */
@@ -9,14 +9,21 @@ export default class Icon {
     /** Full CSS name of the icon, e.g. fas fa-user */
     public readonly fullCssName: string;
 
+    public readonly style: string;
+    public readonly name: string;
+    public readonly prefix: string;
+
     constructor(documentation: Documentation, name: string, style: IconStyle, entry: IconEntry, categories: CategoryEntry[]) {
-        const prefix = iconStylePrefix[style];
+        this.style = iconStylePrefix[style];
+        this.name = name;
+        this.prefix = prefix;
+
         const unicode = entry.unicode;
         const svgPath = entry.svg[style].path;
         const viewbox = entry.svg[style].viewBox;
 
         let onlineUrl = '';
-        this.fullCssName = `${prefix} fa-${name}`;
+        this.fullCssName = `${this.style} ${this.prefix}${name}`;
 
         // Version migrations
         switch (documentation.version) {

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { ConfigKey } from './extension';
+import { ConfigKey } from './font-awesome/configuration';
 
 enum MigrationAction {
     Fix = 'Fix',
@@ -55,7 +55,7 @@ export default class VersionMigrations {
 
 
         for (const name in ConfigKey) {
-            const key = ConfigKey[name];
+            const key = (<unknown>ConfigKey as {[key: string]: ConfigKey})[name];
             const value = config.get(key);
             if (value != null) {
                 vscode.window.showErrorMessage(

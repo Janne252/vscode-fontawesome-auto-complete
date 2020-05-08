@@ -12,9 +12,6 @@ export type ShimCollection = ShimEntry[];
 export default class Documentation {
     public readonly title: string;
     public readonly icons: Icon[];
-
-    public readonly mappedIcons: {[key: string]: Icon};
-
     public readonly iconEntries: IconEntryCollection;
     public readonly categories: CategoryCollection;
     public readonly shims: ShimCollection;
@@ -44,7 +41,6 @@ export default class Documentation {
         }
            
         this.icons = [];
-        this.mappedIcons = {};
 
         this.generateIcons();
     }
@@ -71,7 +67,6 @@ export default class Documentation {
             for (const style of entry.styles) {
                 const icon = new Icon(this, name, style, entry, categories);
                 this.icons.push(icon);
-                this.mappedIcons[icon.fullCssName] = icon;
             }
         }
     }
@@ -86,16 +81,19 @@ export default class Documentation {
 }
 
 export class FontAwesomeCompletionItem extends CompletionItem {
-    readonly fullCssName: string;
+    readonly icon: Icon;
+
+    get fullCssName() {
+        return this.icon.fullCssName;
+    }
 
     constructor(icon: Icon) {
         super(
             icon.fullCssName,               // label
             CompletionItemKind.Reference    // kind
         )
-        
+        this.icon = icon;
         this.documentation = icon.documentation;
-        this.fullCssName = icon.fullCssName;
     }
 }
 

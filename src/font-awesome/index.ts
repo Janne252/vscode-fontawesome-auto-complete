@@ -12,6 +12,7 @@ export enum IconStyle {
     regular = 'regular',
     light = 'light',
     brands = 'brands',
+    duotone = 'duotone',
     v4 = 'v4',
 }
 
@@ -24,10 +25,12 @@ export const iconStylePrefix: {[style in IconStyle]: string} =  {
     [IconStyle.regular]: 'far',
     [IconStyle.light]: 'fal',
     [IconStyle.brands]: 'fab',
+    [IconStyle.duotone]: 'fad',
     [IconStyle.v4]: 'fa',
 };
 
 export const availablePrefixes = Object.keys(iconStylePrefix).map(key => iconStylePrefix[key as IconStyle]);
+export const prefix = 'fa-';
 
 /**
  * Represents the stucture of an icon entry
