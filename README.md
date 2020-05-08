@@ -46,7 +46,7 @@ The extension listens for changes in the settings and auto-reloads itself when n
 ## Troubleshooting tips
 - Font Awesome icons only appear in the auto completion item list if the current word starts with the value of **`fontAwesomeAutocomplete`.`triggerWord`**, e.g. "`fa-`".
    - The last character of the trigger word (e.g. `-`) also works as the trigger character for the auto completion menu.
-- If a selected icon class name is malformed (parts of it missing), try adding the current file extension as a glob pattern (e.g. `"**/*.html"`) to the `disableTriggerWordAutoClearPatterns` setting. If that doesn't help, please open an issue!
+- If a selected icon class name is malformed (parts of it missing) or parts of the document got removed, try adding the current file extension as a glob pattern (e.g. `"**/*.html"`) to the `disableTriggerWordAutoClearPatterns` setting. If that doesn't help, please open an issue!
 - If a custom insertion template is configured and the mouse-over documentation does not work, please open an issue. Make sure to provide the custom insertion template for reference and issue reproduction.
 
 ## Installation
