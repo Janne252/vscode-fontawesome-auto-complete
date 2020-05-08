@@ -6,6 +6,9 @@
     ],
     "fontAwesomeAutocomplete.triggerWord": "fa-",
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": [
-        "**/*.html"
-    ]
+       "**/*.html"
+    ],
+    "fontAwesomeAutocomplete.insertionTemplate": {
+        "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
+    }
 }
