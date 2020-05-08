@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.0] - 2020-05-08
+- Added support for insertion templates per file type
+   - See [Configuration in README.md](README.md#configuration) for more info.
+- Added mouse-over documentation support for custom insertion templates
+- Updated Font Awesome 5 icons to version `5.13.0`
+
 ## [0.1.8] - 2019-06-07
 - Adjusted/fixed icon preview to fully display the icon
 - Fixed an issue where typing additional dashes resulted in 0 completion items (see [#6](https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/6))

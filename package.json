@@ -1,7 +1,7 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome Auto-complete & Preview",
-    "version": "0.1.8",
+    "version": "1.0.0",
     "publisher": "Janne252",
     "description": "Auto-complete & preview Font Awesome icons in any language.",
     "author": {
@@ -56,13 +56,28 @@
                     "minLength": 3,
                     "description": "Foreground color of a Font Awesome icon preview. Supports any valid CSS color."
                 },
+                "fontAwesomeAutocomplete.insertionTemplate": {
+                    "type": "object",
+                    "default": {
+                        "**.html": "{style} {prefix}{name}"
+                    },
+                    "description": "Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {name}, and {prefix}.",
+                    "examples": [
+                        {
+                            "**/*.html": "{style} {prefix}{name}"
+                        },
+                        {
+                            "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
+                        }
+                    ]
+                },
                 "fontAwesomeAutocomplete.triggerCharacters": {
                     "type": "array",
                     "default": [
                         "f"
                     ],
                     "description": "List of characters that trigger Font Awesome Autocomplete.",
-                    "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 1.0.4. This setting can be safely removed."
+                    "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 0.0.4. This setting can be safely removed."
                 }
             }
         }
@@ -72,7 +87,7 @@
         "color": "#1e1c1e",
         "theme": "dark"
     },
-    "license": "SEE LICENSE IN LICENSE.md",
+    "license": "SEE LICENSE IN LICENSE.txt",
     "bugs": {
         "url": "https://github.com/Janne252/vscode-fontawesome-auto-complete/issues"
     },
