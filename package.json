@@ -59,7 +59,7 @@
                 "fontAwesomeAutocomplete.insertionTemplate": {
                     "type": "object",
                     "default": {
-                        "**.html": "{style} {prefix}{name}"
+                        "**/*.html": "{style} {prefix}{name}"
                     },
                     "description": "Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {name}, and {prefix}.",
                     "examples": [
