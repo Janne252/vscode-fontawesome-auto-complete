@@ -108,6 +108,16 @@
     ],
     "badges": [
         {
+            "url": "https://img.shields.io/badge/Font%20Awesome%20Free-5.13.0-%23339af0",
+            "href": "https://fontawesome.com",
+            "description": "Font Awesome Free 5.13.0"
+        },
+        {
+            "url": "https://img.shields.io/badge/Font%20Awesome-4.7.0-%231d9d74",
+            "href": "https://fontawesome.com/v4.7.0/",
+            "description": "Font Awesome 4.7.0"
+        },
+        {
             "url": "https://img.shields.io/vscode-marketplace/v/Janne252.fontawesome-autocomplete.svg",
             "href": "https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete",
             "description": "Extension version"
