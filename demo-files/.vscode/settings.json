@@ -2,7 +2,7 @@
     "git.enabled": false,
     "fontAwesomeAutocomplete.version": "5",
     "fontAwesomeAutocomplete.patterns": [
-        "**/*.html", "**/*.js", "**.ts", "**/*.vue"
+        "**/*.html", "**/*.js", "**.ts", "**/*.vue", "**/*.php"
     ],
     "fontAwesomeAutocomplete.triggerWord": "fa-",
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": [
@@ -10,5 +10,7 @@
     ],
     "fontAwesomeAutocomplete.insertionTemplate": {
         "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
-    }
+    },
+    "editor.snippetSuggestions": "bottom",
+    "fontAwesomeAutocomplete.enableElevatedSortPriority": true
 }
