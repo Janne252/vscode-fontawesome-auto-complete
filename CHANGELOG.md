@@ -1,6 +1,9 @@
 # Change Log
 
-## [1.0.0] - 2020-05-08
+## [1.0.2] - 2020-11-03
+- Updated Font Awesome 5 icons to version `5.15.1`
+
+## [1.0.0] & [1.0.1] - 2020-05-08
 - Added support for insertion templates per file type
    - See [Configuration in README.md](README.md#configuration) for more info.
 - Added mouse-over documentation support for custom insertion templates
