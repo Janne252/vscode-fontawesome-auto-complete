@@ -27,9 +27,9 @@ The following options can be set in the settings to configure the behavior of th
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html"
     ],
-    // A word that triggers the auto completion of Font Awesome icons. Last character of the trigger word is also the trigger character for auto completion menu.
+    // A word that triggers the autocompletion of Font Awesome icons. Last character of the trigger word is also the trigger character for autocompletion menu.
     "fontAwesomeAutocomplete.triggerWord": "fa-",
-    // A list of glob patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the auto completion list.
+    // A list of glob patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the autocompletion list.
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": ["**/*.html"],
     // Background color of a Font Awesome icon preview. Supports any valid CSS color.
     "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
@@ -39,23 +39,39 @@ The following options can be set in the settings to configure the behavior of th
     "fontAwesomeAutocomplete.insertionTemplate": {
         "**/*.html": "{style} {prefix}{name}"
     }
+    // Artificially increases the importance of completion items. Enabled by default as FontAwesome Autocomplete extension only provides suggestions based on the triggerWord setting.
+    "fontAwesomeAutocomplete.enableElevatedSortPriority": true
 }
 ```
 The extension listens for changes in the settings and auto-reloads itself when necessary. 
 
-## Troubleshooting & tips
-- Font Awesome icons only appear in the auto completion item list if the current word starts with the value of **`fontAwesomeAutocomplete`.`triggerWord`**, e.g. "`fa-`".
-   - The last character of the trigger word (e.g. `-`) also works as the trigger character for the auto completion menu.
-- If a selected icon class name is malformed (parts of it missing) or parts of the document got removed, try adding the current file extension as a glob pattern (e.g. `"**/*.html"`) to the **`fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns`** setting. If that doesn't help, please open an issue!
-- Any library with a different icon syntax can be supported by providing an insertion template via the setting **`fontAwesomeAutocomplete.insertionTemplate`**. For example [@fortawesome/vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome) can be supported with the following setting:
-    ```json
-    "fontAwesomeAutocomplete.insertionTemplate": {
-        "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
-    }
-    ```
-- If a custom insertion template is configured and the mouse-over documentation does not work, please open an issue. Make sure to provide the custom insertion template for reference and issue reproduction.
+# Troubleshooting / FAQ
+## I'm not using standard CSS class name icon references
+Any library with a different icon syntax can be supported by providing an insertion template via the setting **`fontAwesomeAutocomplete.insertionTemplate`**. For example [@fortawesome/vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome) can be supported with the following setting:
+```json
+"fontAwesomeAutocomplete.insertionTemplate": {
+    "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
+}
+```
 
-## Installation
+## Autocompletion suggestions are not appearing
+See the [configuration reference](#configuration).
+Font Awesome icons only appear in the autocompletion item list if the current word starts with the value of the setting **`fontAwesomeAutocomplete`.`triggerWord`**, e.g. "`fa-`" (default).
+   - The last character of the trigger word (e.g. `-`, which is the default) also works as the trigger character for the autocompletion menu.
+
+## Malformed / incomplete / weird output after choosing an autocompletion item
+Try adding the current file extension as a glob pattern (e.g. `"**/*.html"`) to the **`fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns`** setting. If that doesn't help, please open an issue!
+
+## Mouse-over documentation does not work with a custom insertion template
+If a custom insertion template is configured and the mouse-over documentation does not work, please open an issue. Make sure to provide the custom insertion template for reference and issue reproduction.
+
+## Autocompletion suggestions of this extension appear at the end of the list
+This is usually caused by another extension having higher priority, especially if the other extension provides snippets.
+- Make sure the setting **`fontAwesomeAutocomplete.enableElevatedSortPriority`** is set to `true` (default)
+- Set the setting **`editor.snippetSuggestions`** to `"bottom"`
+If you're still having trouble with the sort order of the autocompletion items, please open issue. 
+
+# Installation
  - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
 
 ## Change Log

@@ -1,6 +1,8 @@
 # Change Log
 
 ## [1.0.2] - 2020-11-03
+- Added setting **`fontAwesomeAutocomplete.enableElevatedSortPriority`** 
+   - See [Configuration in README.md](README.md#configuration) for more info.
 - Updated Font Awesome 5 icons to version `5.15.1`
 
 ## [1.0.0] & [1.0.1] - 2020-05-08
@@ -31,7 +33,7 @@
 
 ## [0.1.4] - 2018-09-29
 - Updated to Font Awesome 5.3.1 (web)
-- Auto completion item list no longer contains Font Awesome icons by default.
+- Autocompletion item list no longer contains Font Awesome icons by default.
    - Instead a trigger word (defaults to "`fa-`") is used to determine when the list is included.
    - Implemented by replacing the setting **`fontAwesomeAutocomplete`.`triggerCharacters`** with **`fontAwesomeAutocomplete`.`triggerWord`**.
    - See [Configuration in README.md](README.md#configuration) for more info.

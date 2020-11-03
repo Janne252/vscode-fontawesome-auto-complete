@@ -3,7 +3,7 @@
     "displayName": "Font Awesome Auto-complete & Preview",
     "version": "1.0.2",
     "publisher": "Janne252",
-    "description": "Auto-complete & preview Font Awesome icons in any language.",
+    "description": "Autocomplete & preview Font Awesome icons in any language.",
     "author": {
         "name": "Janne Varjo"
     },
@@ -78,6 +78,11 @@
                     ],
                     "description": "List of characters that trigger Font Awesome Autocomplete.",
                     "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 0.0.4. This setting can be safely removed."
+                },
+                "fontAwesomeAutocomplete.enableElevatedSortPriority": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Artificially increases the importance of completion items. Enabled by default as FontAwesome Autocomplete extension only provides suggestions based on the triggerWord setting."
                 }
             }
         }
