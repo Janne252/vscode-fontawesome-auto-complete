@@ -5,6 +5,10 @@ out/**/*.map
 src/**
 .gitignore
 tsconfig.json
-vsc-extension-quickstart.md
 tslint.json
 data/fontawesome-4/svg/*.svg
+demo-files/**
+media/**
+!media/image/icon.png
+migrations/**
+DEVELOPMENT.md
