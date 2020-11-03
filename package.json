@@ -87,7 +87,7 @@
             }
         }
     },
-    "icon": "image/icon.png",
+    "icon": "media/image/icon.png",
     "galleryBanner": {
         "color": "#1e1c1e",
         "theme": "dark"
