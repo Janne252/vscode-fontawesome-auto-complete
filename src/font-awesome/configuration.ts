@@ -4,6 +4,20 @@ import { InsertionTemplate } from './transformation';
 
 export const configurationSection = 'fontAwesomeAutocomplete';
 
+export interface ExtensionConfiguration {
+    readonly version: FontAwesomeVersion;
+    readonly triggerWord: string;
+    readonly disableTriggerWordAutoClearPatterns: string[];
+    readonly patterns: vscode.DocumentFilter[];
+    readonly previewStyle: {
+        readonly backgroundColor: string;
+        readonly foregroundColor: string;
+    };
+    readonly insertionTemplates: InsertionTemplate[];
+    readonly triggerCharacter: string;
+    readonly enableElevatedSortPriority: boolean;
+}
+
 export enum ConfigKey {
     Version = 'version',
     TriggerWord = 'triggerWord',
@@ -11,10 +25,11 @@ export enum ConfigKey {
     PreviewForegroundColor = 'preview.foregroundColor',
     DisableTriggerWordAutoClearPatterns = 'disableTriggerWordAutoClearPatterns',
     InsertionTemplate = 'insertionTemplate',
+    EnableElevatedSortPriority = 'enableElevatedSortPriority',
 }
 
 /** Loads and validates the extension configuration. */
-export function loadConfiguration() {
+export function loadConfiguration(): ExtensionConfiguration {
     const config = vscode.workspace.getConfiguration(configurationSection);
     const version = config.get(ConfigKey.Version) as FontAwesomeVersion;
     let triggerWord = config.get(ConfigKey.TriggerWord) as string;
@@ -63,6 +78,13 @@ export function loadConfiguration() {
     const triggerCharacter = triggerWord[triggerWord.length - 1];
 
     return {
-        version, triggerWord, disableTriggerWordAutoClearPatterns, patterns, previewStyle, insertionTemplates, triggerCharacter
+        version, 
+        triggerWord, 
+        disableTriggerWordAutoClearPatterns, 
+        patterns, 
+        previewStyle, 
+        insertionTemplates, 
+        triggerCharacter,
+        enableElevatedSortPriority: config.get(ConfigKey.EnableElevatedSortPriority) as boolean,
     }
 }

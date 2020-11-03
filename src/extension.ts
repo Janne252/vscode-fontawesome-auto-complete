@@ -10,36 +10,25 @@ const disposables: vscode.Disposable[] = [];
 
 function registerProviders(context: vscode.ExtensionContext) {
     // Load config
-    const {
-        version, 
-        triggerWord, 
-        triggerCharacter,
-        disableTriggerWordAutoClearPatterns, 
-        previewStyle, 
-        patterns, 
-        insertionTemplates,
-    } = loadConfiguration();
+    const config = loadConfiguration();
 
     // Load icon documentation
     const documentation = new Documentation(
-        path.join(path.dirname(__dirname), `data/fontawesome-${version}`),
-        previewStyle,
-        version
+        path.join(path.dirname(__dirname), `data/fontawesome-${config.version}`),
+        config
     );
 
     const providers = {
         completion: new CompletionProvider(
             documentation, 
-            triggerWord, 
-            disableTriggerWordAutoClearPatterns,
-            insertionTemplates
+            config
         ),
-        hover: new HoverProvider(documentation, insertionTemplates),
+        hover: new HoverProvider(documentation, config),
     };
 
     disposables.push(
-        vscode.languages.registerCompletionItemProvider(patterns, providers.completion, ...[triggerCharacter]),
-        vscode.languages.registerHoverProvider(patterns, providers.hover),
+        vscode.languages.registerCompletionItemProvider(config.patterns, providers.completion, ...[config.triggerCharacter]),
+        vscode.languages.registerHoverProvider(config.patterns, providers.hover),
     );
 
     context.subscriptions.push(...disposables);

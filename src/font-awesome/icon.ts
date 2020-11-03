@@ -26,7 +26,7 @@ export default class Icon {
         this.fullCssName = `${this.style} ${this.prefix}${name}`;
 
         // Version migrations
-        switch (documentation.version) {
+        switch (documentation.config.version) {
             case FontAwesomeVersion.v4:
                 onlineUrl = `fontawesome.com/v4.7.0/icon/${name}/`;
                 break;
@@ -39,9 +39,9 @@ export default class Icon {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="${viewbox.join(' ')}"
-            style="background-color: ${documentation.previewStyle.backgroundColor};transform: scale(0.9);"
+            style="background-color: ${documentation.config.previewStyle.backgroundColor};transform: scale(0.9);"
         >
-            <path fill="${documentation.previewStyle.foregroundColor}" d="${svgPath}"/>
+            <path fill="${documentation.config.previewStyle.foregroundColor}" d="${svgPath}"/>
         </svg>
         `;
 
@@ -64,7 +64,7 @@ export default class Icon {
             `| **Unicode**                  | \`${unicode}\`                                                                |`,
             `| **Changes**                  | ${changes}                                                                    |`,
             '',
-            `[${documentation.title}](${documentation.config.url})`,
+            `[${documentation.title}](${documentation.metadata.url})`,
         ].join('\n'));
     }
 

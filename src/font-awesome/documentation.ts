@@ -1,8 +1,9 @@
 import {CompletionItem, CompletionItemKind, Hover} from 'vscode';
 import * as YAML from 'yaml';
 import * as fs from 'fs';
-import { IconEntry, PreviewStyle, FontAwesomeVersion, CategoryEntry, ShimEntry } from './';
+import { IconEntry, FontAwesomeVersion, CategoryEntry, ShimEntry } from './';
 import Icon from './icon';
+import { ExtensionConfiguration } from './configuration';
 
 export interface IconEntryCollection {[key: string]: IconEntry; }
 export interface CategoryCollection {[key: string]: CategoryEntry; }
@@ -15,21 +16,17 @@ export default class Documentation {
     public readonly iconEntries: IconEntryCollection;
     public readonly categories: CategoryCollection;
     public readonly shims: ShimCollection;
-    public readonly version: FontAwesomeVersion;
     public readonly rootPath: string;
-    public readonly previewStyle: PreviewStyle;
-    public readonly config: {version: string, url: string};
+    public readonly metadata: {url: string, version: string};
 
-    constructor(rootPath: string, previewStyle: PreviewStyle, version: FontAwesomeVersion) {
+    constructor(rootPath: string, public readonly config: ExtensionConfiguration) {
         this.rootPath = rootPath;
         this.iconEntries = require(`${rootPath}/metadata/icons`);
-        this.previewStyle = previewStyle;
-        this.version = version;
-        this.config = require(`${rootPath}/metadata/config`);
-        this.title = `Font Awesome ${this.config.version}`;
+        this.metadata = require(`${rootPath}/metadata/config`);
+        this.title = `Font Awesome ${this.metadata.version}`;
 
         // Version support
-        switch (version) {
+        switch (this.config.version) {
             case FontAwesomeVersion.v4:
                 this.categories = {};
                 this.shims = [];
@@ -72,7 +69,7 @@ export default class Documentation {
     }
 
     public asCompletionItem(icon: Icon): FontAwesomeCompletionItem {
-        return new FontAwesomeCompletionItem(icon);
+        return new FontAwesomeCompletionItem(icon, this.config);
     }
 
     public asHoverItem(icon: Icon): FontAwesomeHoverItem {
@@ -87,13 +84,16 @@ export class FontAwesomeCompletionItem extends CompletionItem {
         return this.icon.fullCssName;
     }
 
-    constructor(icon: Icon) {
+    constructor(icon: Icon, config: ExtensionConfiguration) {
         super(
             icon.fullCssName,               // label
-            CompletionItemKind.Reference    // kind
+            CompletionItemKind.Text         // kind
         )
         this.icon = icon;
         this.documentation = icon.documentation;
+        if (config.enableElevatedSortPriority) {
+            this.sortText = '\0';
+        }
     }
 }
 

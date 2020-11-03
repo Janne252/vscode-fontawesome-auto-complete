@@ -1,5 +1,6 @@
 import { Hover, HoverProvider as IHoverProvider, Position, Range, TextDocument } from 'vscode';
 import { availablePrefixes, prefix } from '.';
+import { ExtensionConfiguration } from './configuration';
 import Documentation from './documentation';
 import Icon from './icon';
 import { InsertionTemplate } from './transformation';
@@ -8,14 +9,12 @@ const fullClassNamePattern = new RegExp(`(${availablePrefixes.join('|')})( ${pre
 
 export default class HoverProvider implements IHoverProvider {
     public readonly documentation: Documentation;
-    public readonly insertionTemplates: InsertionTemplate[];
     
     private readonly renderedIconInsertionMap: {[key: string]: Icon} = {};
     private readonly renderedInsertionTemplateMaps: {[key: string]: boolean} = {};
 
-    constructor(documentation: Documentation, insertionTemplates: InsertionTemplate[]) {
+    constructor(documentation: Documentation, private readonly config: ExtensionConfiguration) {
         this.documentation = documentation;
-        this.insertionTemplates = insertionTemplates;
         for (const icon of documentation.icons) {
             this.renderedIconInsertionMap[icon.fullCssName] = icon;
         }
@@ -23,7 +22,7 @@ export default class HoverProvider implements IHoverProvider {
 
     public provideHover(document: TextDocument, position: Position) {
         let range: Range;
-        const insertionTemplate = InsertionTemplate.resolve(document, this.insertionTemplates);
+        const insertionTemplate = InsertionTemplate.resolve(document, this.config.insertionTemplates);
 
         if (insertionTemplate) {
             range = document.getWordRangeAtPosition(position, insertionTemplate.templatePattern) as Range;

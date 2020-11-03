@@ -3,30 +3,29 @@ import Documentation, { FontAwesomeCompletionItem } from './documentation';
 import { globPatternToRegExp } from "../helper/glob";
 import * as RegexHelpers from '../helper/regex';
 import { InsertionTemplate } from "./transformation";
+import { ExtensionConfiguration } from "./configuration";
 
 export default class CompletionProvider implements CompletionItemProvider {
     /** List of generated completion items. */
     private readonly completionItems: FontAwesomeCompletionItem[] = [];
-    /** A word that triggers the auto completion of Font Awesome icons. */
+    /** A word that triggers the autocompletion of Font Awesome icons. */
     private readonly triggerWord: string;
-    /** Pattern used to narrow down the document word range on auto completion. */
+    /** Pattern used to narrow down the document word range on autocompletion. */
     private readonly triggerWordRegexp: RegExp;
-    /** A list of regex patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the auto completion list. */
+    /** A list of regex patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the autocompletion list. */
     private readonly disableTriggerWordAutoClearRegexp: RegExp[];
     
     private readonly insertionTemplates: InsertionTemplate[];
 
     constructor(
         documentation: Documentation, 
-        triggerWord: string, 
-        disableTriggerWordAutoClearPatterns: string[],
-        insertionTemplates: InsertionTemplate[],
+        private readonly config: ExtensionConfiguration
     ) {
         for (const icon of documentation.icons) {
             this.completionItems.push(documentation.asCompletionItem(icon));
         }
 
-        this.triggerWord = triggerWord;
+        this.triggerWord = this.config.triggerWord;
         // Support for alphanumeric suffix, including dashes. This ensures that the completion menu
         // provides items even after entering additional dashes, e.g.
         // fa-user (initial completion list triggered), followed by -circle (secondary completion list trigger.)
@@ -34,11 +33,11 @@ export default class CompletionProvider implements CompletionItemProvider {
         // the filter word to the closest dash, meaning the the secondary completion item list is filtered by
         // circle, not fa-user-cirlce.
         // https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/6
-        this.triggerWordRegexp = new RegExp(`${triggerWord}[a-zA-Z0-9-]*`);
-        this.disableTriggerWordAutoClearRegexp = disableTriggerWordAutoClearPatterns.map(
+        this.triggerWordRegexp = new RegExp(`${this.config.triggerWord}[a-zA-Z0-9-]*`);
+        this.disableTriggerWordAutoClearRegexp = this.config.disableTriggerWordAutoClearPatterns.map(
             pattern => globPatternToRegExp(pattern)
         );
-        this.insertionTemplates = insertionTemplates;
+        this.insertionTemplates = this.config.insertionTemplates;
     }
 
     private isAutoClearTriggerWordEnabledFor(document: TextDocument) {
@@ -80,7 +79,7 @@ export default class CompletionProvider implements CompletionItemProvider {
         const additionalTextEdits: TextEdit[] = [];
         const result: FontAwesomeCompletionItem[] = [];
 
-        // VS Code natively removes the "trigger word" when an auto completion item is selected for some languages, for example HTML.
+        // VS Code natively removes the "trigger word" when an autocompletion item is selected for some languages, for example HTML.
         // Other languages can't do it, we'll have to remove it manually
         // If the document language id is not present in the list of languages that do it automatically, do it manually
         if (isAutoClearTriggerWordEnabled) {
