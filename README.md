@@ -6,6 +6,9 @@
 
 Auto-complete & preview Font Awesome `5` or `4` icons in any language (see [configuration](#configuration)).
 
+## Installation
+ - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
+
 ## Default usage
 Type "`fa-`" (without quotes) to start auto-completing icons. If the icon preview is not showing up (as shown in the GIFs below), press `Ctrl+Space` (default hotkey) or press the ![](image/vscode-gui-read-more.png) "Read More..." button to expand the details view.
 
@@ -35,7 +38,7 @@ The following options can be set in the settings to configure the behavior of th
     "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
     // Foreground color of a Font Awesome icon preview. Supports any valid CSS color.
     "fontAwesomeAutocomplete.preview.foregroundColor": "#000000",
-    // Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {name}, and {prefix}.
+    // Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {styleName}, {name}, and {prefix}. {name} supports the following formatters: camelCase, kebabCase, pascalCase, and snakeCase. Usage: {name:formatter}, e.g. {name:camelCase}
     "fontAwesomeAutocomplete.insertionTemplate": {
         "**/*.html": "{style} {prefix}{name}"
     }
@@ -47,12 +50,7 @@ The extension listens for changes in the settings and auto-reloads itself when n
 
 # Troubleshooting / FAQ
 ## I'm not using standard CSS class name icon references
-Any library with a different icon syntax can be supported by providing an insertion template via the setting **`fontAwesomeAutocomplete.insertionTemplate`**. For example [@fortawesome/vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome) can be supported with the following setting:
-```json
-"fontAwesomeAutocomplete.insertionTemplate": {
-    "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
-}
-```
+See [Insertion templates for 3rd party libraries](#insertion-templates-for-3rd-party-libraries).
 
 ## Autocompletion suggestions are not appearing
 See the [configuration reference](#configuration).
@@ -71,12 +69,23 @@ This is usually caused by another extension having higher priority, especially i
 - Set the setting **`editor.snippetSuggestions`** to `"bottom"`
 If you're still having trouble with the sort order of the autocompletion items, please open issue. 
 
-# Installation
- - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
+# Insertion templates for 3rd party libraries
+-  [@fortawesome/vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome)
+    ```json
+    {
+        "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
+    }
+    ```
+-  [@fortawesome/free-**`brands|regular|solid`**-svg-icons](https://github.com/FortAwesome/Font-Awesome)
+    ```json
+   {
+       "**/*.vue": "import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';"
+   }
+    ```
 
-## Change Log
- - See [CHANGELOG.md](CHANGELOG.md)
+# Changelog
+See [CHANGELOG.md](CHANGELOG.md)
 
-## License
- - See [LICENCE.md](LICENCE.md)
+# License
+See [LICENCE.md](LICENCE.md)
  
