@@ -38,7 +38,9 @@ The following options can be set in the settings to configure the behavior of th
     "fontAwesomeAutocomplete.preview.backgroundColor": "#ffffff",
     // Foreground color of a Font Awesome icon preview. Supports any valid CSS color.
     "fontAwesomeAutocomplete.preview.foregroundColor": "#000000",
-    // Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {styleName}, {name}, and {prefix}. {name} supports the following formatters: camelCase, kebabCase, pascalCase, and snakeCase. Usage: {name:formatter}, e.g. {name:camelCase}
+    // Allows overriding the inserted text per file type when an autocompletion item is selected. 
+    // Available template placeholders are {style}, {styleName}, {name}, and {prefix}. 
+    // {name} supports the following formatters: camelCase, kebabCase, pascalCase, and snakeCase. Usage: {name:formatter}, e.g. {name:camelCase}
     "fontAwesomeAutocomplete.insertionTemplate": {
         "**/*.html": "{style} {prefix}{name}"
     }
