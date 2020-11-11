@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 import { IconEntry, IconStyle, iconStylePrefix, FontAwesomeVersion, CategoryEntry, prefix } from ".";
-import Documentation from './documentation';
 
 /** Represents an icon that can be used as the source of Hover or Completion item. */
 export default class Icon {
@@ -9,12 +8,22 @@ export default class Icon {
     /** Full CSS name of the icon, e.g. fas fa-user */
     public readonly fullCssName: string;
 
+    /** Short style of the icon, e.g. fab, far */
     public readonly style: string;
+    /** Style name of the icon, e.g. brands, regular */
+    public readonly styleName: string;
     public readonly name: string;
     public readonly prefix: string;
 
-    constructor(documentation: Documentation, name: string, style: IconStyle, entry: IconEntry, categories: CategoryEntry[]) {
+    constructor(
+        documentation: PartialDocumentation, 
+        name: string, 
+        style: IconStyle, 
+        entry: PartialIconEntry, 
+        categories: CategoryEntry[]
+    ) {
         this.style = iconStylePrefix[style];
+        this.styleName = style;
         this.name = name;
         this.prefix = prefix;
 
@@ -75,4 +84,17 @@ export default class Icon {
     private encodeSpaces(content: string) {
         return content.replace(/ /g, '%20');
     }
+}
+
+export interface PartialDocumentation {
+    title: string;
+    metadata: {version: string, url: string};
+    config: {version: FontAwesomeVersion, previewStyle: {backgroundColor: string, foregroundColor: string}};
+}
+
+export interface PartialIconEntry {
+    unicode: string;
+    svg: IconEntry['svg'];
+    changes: string[];
+    label: string;
 }

@@ -8,5 +8,5 @@ export function test(input: string, regex: RegExp) {
 
 /** @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping */
 export function escape(string: string) {
-    return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    return string.replace(/[.*+\-?^${}()|[\]\\\/]/g, '\\$&'); // $& means the whole matched string
 }

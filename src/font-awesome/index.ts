@@ -30,6 +30,7 @@ export const iconStylePrefix: {[style in IconStyle]: string} =  {
 };
 
 export const availablePrefixes = Object.keys(iconStylePrefix).map(key => iconStylePrefix[key as IconStyle]);
+export const availableStyleNames = Object.values(IconStyle);
 export const prefix = 'fa-';
 
 /**

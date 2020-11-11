@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { FontAwesomeVersion } from '.';
+import { globPatternToRegExp } from '../helper/glob';
 import { InsertionTemplate } from './transformation';
 
 export const configurationSection = 'fontAwesomeAutocomplete';
@@ -7,7 +8,8 @@ export const configurationSection = 'fontAwesomeAutocomplete';
 export interface ExtensionConfiguration {
     readonly version: FontAwesomeVersion;
     readonly triggerWord: string;
-    readonly disableTriggerWordAutoClearPatterns: string[];
+    /** A list of regex patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the autocompletion list. */
+    readonly disableTriggerWordAutoClearPatterns: RegExp[];
     readonly patterns: vscode.DocumentFilter[];
     readonly previewStyle: {
         readonly backgroundColor: string;
@@ -32,10 +34,12 @@ export enum ConfigKey {
 export function loadConfiguration(): ExtensionConfiguration {
     const config = vscode.workspace.getConfiguration(configurationSection);
     const version = config.get(ConfigKey.Version) as FontAwesomeVersion;
-    let triggerWord = config.get(ConfigKey.TriggerWord) as string;
+    const triggerWord = config.get(ConfigKey.TriggerWord) as string;
 
-    const triggerWordSetting = config.inspect(ConfigKey.TriggerWord);
-    const disableTriggerWordAutoClearPatterns = config.get(ConfigKey.DisableTriggerWordAutoClearPatterns) as string[];
+    // Convert loaded glob patterns into regular expressions
+    const disableTriggerWordAutoClearPatterns = (config.get(ConfigKey.DisableTriggerWordAutoClearPatterns) as string[]).map(
+        pattern => globPatternToRegExp(pattern)
+    );
     const insertionTemplatesConfig = config.get(ConfigKey.InsertionTemplate) as {[key: string]: string};
 
     const insertionTemplates: InsertionTemplate[] = [];
@@ -43,37 +47,16 @@ export function loadConfiguration(): ExtensionConfiguration {
         insertionTemplates.push(new InsertionTemplate(pattern, insertionTemplatesConfig[pattern]));
     }
 
-    let defaultTriggerWord = 'fa-';
-
-    if (triggerWordSetting != null && triggerWordSetting.defaultValue != null) {
-        defaultTriggerWord = triggerWordSetting.defaultValue as string;
-    } else {
-        defaultTriggerWord = 'fa-';
-    }
-        // Turn loaded glob patterns into DocumentFilters
-        const patterns = (config.get('patterns') as string[])
-        .map(pattern => <vscode.DocumentFilter> {
-            pattern,
-            scheme: 'file',
-        });
+    // Convert loaded glob patterns into DocumentFilters
+    const patterns = (config.get('patterns') as string[]).map(pattern => <vscode.DocumentFilter> {
+        pattern,
+        scheme: 'file',
+    });
 
     const previewStyle = {
         backgroundColor: config.get(ConfigKey.PreviewBackgroundColor) as string,
         foregroundColor: config.get(ConfigKey.PreviewForegroundColor) as string,
     };
-
-    if (config.triggerWord.length == 0) {
-        vscode.window.showErrorMessage(
-            `Setting ${configurationSection}.${ConfigKey.TriggerWord} cannot be empty - falling back to "${defaultTriggerWord}"!`,
-            'Restore'
-        ).then(value => {
-            if (value == 'Restore') {
-                config.update(ConfigKey.TriggerWord, defaultTriggerWord);
-            }
-        });
-
-        triggerWord = defaultTriggerWord;
-    }
 
     const triggerCharacter = triggerWord[triggerWord.length - 1];
 
