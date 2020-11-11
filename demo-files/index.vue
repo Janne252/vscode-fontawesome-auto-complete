@@ -7,8 +7,9 @@
 </template>
 
 <script>
-export default {
+import {faUser} from '@fortawesome/free-regular-svg-icons';
 
+export default {
 }
 </script>
 

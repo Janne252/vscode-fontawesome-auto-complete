@@ -4,12 +4,12 @@
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html", "**/*.js", "**.ts", "**/*.vue", "**/*.php"
     ],
-    "fontAwesomeAutocomplete.triggerWord": "fa-",
+    //"fontAwesomeAutocomplete.triggerWord": "fa-",
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": [
        "**/*.html"
     ],
     "fontAwesomeAutocomplete.insertionTemplate": {
-        "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
+        "**/*.vue": "import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';"
     },
     "editor.snippetSuggestions": "bottom",
     "fontAwesomeAutocomplete.enableElevatedSortPriority": true
