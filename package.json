@@ -1,7 +1,7 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome Auto-complete & Preview",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "publisher": "Janne252",
     "description": "Autocomplete & preview Font Awesome icons in any language.",
     "author": {
@@ -61,13 +61,16 @@
                     "default": {
                         "**/*.html": "{style} {prefix}{name}"
                     },
-                    "description": "Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {name}, and {prefix}.",
+                    "description": "Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {styleName}, {name}, and {prefix}. {name} supports the following formatters: camelCase, kebabCase, pascalCase, and snakeCase. Usage: {name:formatter}, e.g. {name:camelCase}",
                     "examples": [
                         {
                             "**/*.html": "{style} {prefix}{name}"
                         },
                         {
                             "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
+                        },
+                        {
+                            "**/*.vue": "import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';"
                         }
                     ]
                 },
@@ -136,18 +139,23 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "pretest": "npm run compile"
+        "pretest": "tsc -p ./",
+        "test": "mocha -p ./tsconfig.json ./out/**/*.spec.js --exit",
+        "extension-test": "npm run compile && node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/mocha": "^7.0.2",
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.0.4",
         "@types/node": "^13.13.5",
-        "@types/yaml": "^1.9.7",
         "@types/vscode": "^1.32.0",
-        "typescript": "^3.8.3",
-        "vscode-test": "^1.3.0"
+        "@types/yaml": "^1.9.7",
+        "glob": "^7.1.6",
+        "mocha": "^8.2.1",
+        "tslint": "^6.1.2",
+        "typescript": "^4.0.5",
+        "vscode-test": "^1.4.1"
     },
     "dependencies": {
-        "tslint": "^6.1.2",
         "yaml": "^1.9.2"
     }
 }

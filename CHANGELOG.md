@@ -1,4 +1,7 @@
 # Change Log
+## [1.1.0] - 2020-11-11
+- Added `{styleName}` and `{name:formatter}` support for setting **`fontAwesomeAutocomplete.insertionTemplate`**.
+   - See [Configuration in README.md](README.md#configuration) for more info.
 
 ## [1.0.2] - 2020-11-03
 - Added setting **`fontAwesomeAutocomplete.enableElevatedSortPriority`** 
