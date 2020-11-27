@@ -7,7 +7,12 @@
 Auto-complete & preview Font Awesome `5` or `4` icons in any language (see [configuration](#configuration)).
 
 ## Installation
- - [Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)
+| Platform / type | URL |
+|-----------------------|----------------------|
+|[**VS Code**](https://code.visualstudio.com/)|[Font Awesome Autocomplete on Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)|
+|[**VSCodium**](https://vscodium.com/)|[Font Awesome Autocomplete on Open VSX Registry](https://open-vsx.org/extension/Janne252/fontawesome-autocomplete)|
+|Manual `.vsix` file|[Releases](https://github.com/Janne252/vscode-fontawesome-auto-complete/releases)|
+
 
 ## Default usage
 Type "`fa-`" (without quotes) to start auto-completing icons. If the icon preview is not showing up (as shown in the GIFs below), press `Ctrl+Space` (default hotkey) or press the ![](image/vscode-gui-read-more.png) "Read More..." button to expand the details view.
