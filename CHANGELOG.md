@@ -1,4 +1,7 @@
 # Change Log
+## [1.1.1] - 2020-12-10
+- Update extension description on all platforms. [See README.md](README.md) for a list of platforms where this extension is available.
+
 ## [1.1.0] - 2020-11-11
 - Added `{styleName}` and `{name:formatter}` support for setting **`fontAwesomeAutocomplete.insertionTemplate`**.
    - See [Configuration in README.md](README.md#configuration) for more info.
