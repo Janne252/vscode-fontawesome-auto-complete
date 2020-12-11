@@ -1,0 +1,13 @@
+- Capture all screenshots and video in the `demo-files\promotional\screenshots.code-workspace` workspace
+- Window positioning
+    - Set VS Code window size via Developer tools console to `1200 x 600`: `window.resizeTo(1200, 600)`
+	- Set VS Code window position via Developer tools console to `0, 0`: `window.moveTo(0, 0)`
+- Make sure non-standard extensions are not visible in the window on the workspace
+    - Disable them via settings (similar to git and cspell) or by disabling the extension on the workspace
+- Open `index.html`. Make sure it's the only open tab. Collapse sidebar (file list)
+- Capture screenshots with irfanview, make sure cursor is included
+- Video
+   - Use record.bat to record the video. Requires `ffmpeg`.
+   - Use script.ahk (binds to Ctrl+D) to execute keystrokes. Requires `AutoHotkey`.
+   - Use `make-gif.bat` to output the preview gif image. 
+       - `make-gif.bat` contains start (`-ss`) and end (`-to`) timestamps
