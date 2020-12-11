@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "root"
+		}
+	],
+	"extensions": {
+		
+	},
+	"settings": {
+		"window.title": "${dirty}${activeEditorShort}${separator}${appName}",
+		"breadcrumbs.filePath": "last",
+		"git.enabled": false,
+		"github.gitAuthentication": false,
+		"cSpell.enabled": false,
+		"cSpell.showStatus": false,
+		"editor.suggestOnTriggerCharacters": false,
+		"editor.quickSuggestions": {
+			"other": false,
+			"comments": false,
+			"strings": false
+		}
+	},
+}
