@@ -6,7 +6,7 @@
 Auto-complete & preview Font Awesome `5` or `4` icons in any language (see [configuration](#configuration)).
 
 ## Installation
-| Platform / type | URL |
+| Product / installation type | Platform |
 |-----------------------|----------------------|
 |[**VS Code**](https://code.visualstudio.com/)|[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/Janne252.fontawesome-autocomplete?label=Visual%20Studio%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=Janne252.fontawesome-autocomplete)|
 |[**VSCodium**](https://vscodium.com/)|[![Open VSX Version](https://img.shields.io/open-vsx/v/janne252/fontawesome-autocomplete?label=Open%20VSX%20Registry)](https://open-vsx.org/extension/Janne252/fontawesome-autocomplete)|
