@@ -1,4 +1,8 @@
 # Change Log
+## [1.1.2] - 2020-12-20
+- Fixed [an issue](#19) where dots (`.`) in patterns for settings `disableTriggerWordAutoClearPatterns` and `insertionTemplate` were not properly escaped
+
+
 ## [1.1.1] - 2020-12-10
 - Update extension description on all platforms. [See README.md](README.md) for a list of platforms where this extension is available.
 
