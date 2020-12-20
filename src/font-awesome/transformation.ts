@@ -1,4 +1,4 @@
-import { globPatternToRegExp } from "../helper/glob";
+import * as globPatternToRegExp from 'glob-to-regexp';
 import * as RegexpHelpers from '../helper/regex';
 import { availablePrefixes, availableStyleNames, prefix } from ".";
 import { setCharacterCase } from "../helper/string";
@@ -23,7 +23,7 @@ export class InsertionTemplate {
 
     constructor(pattern: string, template: string) {
         this.alias = pattern;
-        this.pattern = globPatternToRegExp(pattern);
+        this.pattern = globPatternToRegExp(pattern, {globstar: true});
         this.template = template;
         this.templatePattern = new RegExp(
             RegexpHelpers.escape(template)
@@ -39,7 +39,7 @@ export class InsertionTemplate {
      * @param document
      */
     public matches(document: {fileName: string}) {
-        return RegexpHelpers.test(document.fileName, this.pattern);
+        return RegexpHelpers.testUri(document.fileName, this.pattern);
     }
 
     /**
