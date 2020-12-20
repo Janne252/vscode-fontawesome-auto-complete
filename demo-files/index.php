@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <i class="fab fa-php"></i>
+    <i class="<?=fa('fa-user')?>"></i>
 </body>
 </html>

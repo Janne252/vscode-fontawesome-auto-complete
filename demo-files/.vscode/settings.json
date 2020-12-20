@@ -2,14 +2,15 @@
     "git.enabled": false,
     "fontAwesomeAutocomplete.version": "5",
     "fontAwesomeAutocomplete.patterns": [
-        "**/*.html", "**/*.js", "**.ts", "**/*.vue", "**/*.php"
+        "**/*.html", "**/*.js", "**.ts", "**/*.vue", "**/*.php", "**/*.cshtml"
     ],
-    //"fontAwesomeAutocomplete.triggerWord": "fa-",
+    "fontAwesomeAutocomplete.triggerWord": "fa-",
     "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": [
-       "**/*.html"
+       "**/*.html",
     ],
     "fontAwesomeAutocomplete.insertionTemplate": {
-        "**/*.vue": "import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';"
+        "**/*.vue": "import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';",
+        "**/*.php": "<?=fa('{prefix}{name:kebabCase}')?>"
     },
     "editor.snippetSuggestions": "bottom",
     "fontAwesomeAutocomplete.enableElevatedSortPriority": true
