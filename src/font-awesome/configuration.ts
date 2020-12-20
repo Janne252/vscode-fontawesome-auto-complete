@@ -1,15 +1,13 @@
 import * as vscode from 'vscode';
 import { FontAwesomeVersion } from '.';
-import { globPatternToRegExp } from '../helper/glob';
-import { InsertionTemplate } from './transformation';
-
+import { AutoClearTriggerWordRule, InsertionTemplate } from './transformation';
 export const configurationSection = 'fontAwesomeAutocomplete';
 
 export interface ExtensionConfiguration {
     readonly version: FontAwesomeVersion;
     readonly triggerWord: string;
     /** A list of regex patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the autocompletion list. */
-    readonly disableTriggerWordAutoClearPatterns: RegExp[];
+    readonly disableTriggerWordAutoClearRules: AutoClearTriggerWordRule[];
     readonly patterns: vscode.DocumentFilter[];
     readonly previewStyle: {
         readonly backgroundColor: string;
@@ -37,8 +35,8 @@ export function loadConfiguration(): ExtensionConfiguration {
     const triggerWord = config.get(ConfigKey.TriggerWord) as string;
 
     // Convert loaded glob patterns into regular expressions
-    const disableTriggerWordAutoClearPatterns = (config.get(ConfigKey.DisableTriggerWordAutoClearPatterns) as string[]).map(
-        pattern => globPatternToRegExp(pattern)
+    const disableTriggerWordAutoClearRules = (config.get(ConfigKey.DisableTriggerWordAutoClearPatterns) as string[]).map(
+        pattern => new AutoClearTriggerWordRule(pattern)
     );
     const insertionTemplatesConfig = config.get(ConfigKey.InsertionTemplate) as {[key: string]: string};
 
@@ -63,7 +61,7 @@ export function loadConfiguration(): ExtensionConfiguration {
     return {
         version, 
         triggerWord, 
-        disableTriggerWordAutoClearPatterns, 
+        disableTriggerWordAutoClearRules, 
         patterns, 
         previewStyle, 
         insertionTemplates, 

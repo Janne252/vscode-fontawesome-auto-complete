@@ -92,3 +92,19 @@ export class InsertionTemplate {
         return null;
     }
 }
+
+export class AutoClearTriggerWordRule {
+    public readonly pattern: RegExp;
+
+    constructor(pattern: string) {
+        this.pattern = globPatternToRegExp(pattern, {globstar: true});
+    }
+
+    /**
+     * Checks whether or not the insertion template is configured to be used with the document.
+     * @param document
+     */
+    public matches(document: {fileName: string}) {
+        return RegexpHelpers.testUri(document.fileName, this.pattern);
+    }
+}
