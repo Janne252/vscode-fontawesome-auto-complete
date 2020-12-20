@@ -1,12 +1,38 @@
 import * as assert from 'assert';
 import { IconStyle, iconStylePrefix, prefix } from '.';
-import { InsertionTemplate, InsertionTemplateTokenFormat } from './transformation';
+import { AutoClearTriggerWordRule, InsertionTemplate, InsertionTemplateTokenFormat } from './transformation';
+
+const patternMatchingTests: [string, string, boolean][] = [
+    // loose patterns
+    ['**/*.html',   'index.html',               true    ],
+    ['**/*.html',   'foo/bar/index.html',       true    ],
+    ['**/*.html',   'foo/bar/index.html.bak',   false   ],
+    ['**/*.vue',    'foo/bar/index.html',       false   ],
+    ['**/*.*',      'foo/bar/index.html',       true    ],
+    ['**/*.*',      'foo/bar/index.html.bak',   true    ],
+
+    // strict pattern
+    ['some/path/prefix*.html', 'some/path/prefix-file.html',    true],
+    ['some/path/prefix*.html', 'some/path-2/prefix-file.html',  false],
+
+    // Glob star
+    ['**/some/path/*.html', 'foo/bar/some/path/file.html',          true],
+    ['**/some/path/*.html', 'foo/bar/some/path-2/prefix-file.html', false],
+    
+    // https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/19
+    ['**/*.html',   'foo/bar/index.cshtml',     false   ], 
+    ['**/*.cshtml', 'foo/bar/index.html',       false   ],
+];
 
 describe('transformation', () => {
     it('InsertionTemplate.matches', () => {
-        assert.strictEqual(new InsertionTemplate('**/*.html', '').matches({fileName: 'foo/bar/index.html'}), true);
-        assert.strictEqual(new InsertionTemplate('**/*.vue', '').matches({fileName: 'foo/bar/index.html'}), false);
-        assert.strictEqual(new InsertionTemplate('**/*.*', '').matches({fileName: 'foo/bar/index.html'}), true);
+        for (const [pattern, fileName, isMatch] of patternMatchingTests) {
+            assert.strictEqual(
+                new InsertionTemplate(pattern, '').matches({fileName}), 
+                isMatch, 
+                `InsertionTemplate: "${pattern}" matches "${fileName}": ${isMatch}`
+            );
+        }
     });
 
     it('InsertionTemplate.format', () => {
@@ -46,5 +72,15 @@ describe('transformation', () => {
             new InsertionTemplate('', `import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';`).render(icon),
             `import {faSortNumericUpAlt} from '@fortawesome/free-solid-svg-icons';`
         );
+    });
+
+    it('AutoClearTriggerWordRule.matches', () => {
+        for (const [pattern, fileName, isMatch] of patternMatchingTests) {
+            assert.strictEqual(
+                new AutoClearTriggerWordRule(pattern).matches({fileName}), 
+                isMatch, 
+                `AutoClearTriggerWordRule: "${pattern}" matches "${fileName}": ${isMatch}`
+            );
+        }
     });
 });
