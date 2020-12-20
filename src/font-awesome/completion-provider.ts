@@ -1,6 +1,5 @@
 import { CancellationToken, CompletionContext, CompletionItemProvider, Position, TextDocument, Range, TextEdit } from "vscode";
 import Documentation, { FontAwesomeCompletionItem } from './documentation';
-import * as RegexHelpers from '../helper/regex';
 import { InsertionTemplate } from "./transformation";
 import { ExtensionConfiguration } from "./configuration";
 
@@ -33,8 +32,8 @@ export default class CompletionProvider implements CompletionItemProvider {
 
     private isAutoClearTriggerWordEnabledFor(document: TextDocument) {
         // converts a disable pattern into "enabled" rule
-        for (const disablePattern of this.config.disableTriggerWordAutoClearPatterns) {
-            if (RegexHelpers.test(document.fileName, disablePattern)) {
+        for (const rule of this.config.disableTriggerWordAutoClearRules) {
+            if (rule.matches(document)) {
                 return false;
             }
         }
