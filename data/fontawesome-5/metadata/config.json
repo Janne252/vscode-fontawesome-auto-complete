@@ -1,4 +1,5 @@
 {
-    "version": "v5.15.4",
-    "url": "https://fontawesome.com/"
+    "version": "5.15.4",
+    "iconBaseUrl": "https://fontawesome.com/v5.15/icons/",
+    "url": "https://fontawesome.com/v5.15/"
 }
