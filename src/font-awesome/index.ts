@@ -2,6 +2,7 @@
 export enum FontAwesomeVersion {
     v4 = '4',
     V5 = '5',
+    V6 = '6',
 }
 /**
  * Available FontAwesome icon styles.

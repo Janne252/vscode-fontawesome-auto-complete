@@ -17,7 +17,7 @@ export default class Documentation {
     public readonly categories: CategoryCollection;
     public readonly shims: ShimCollection;
     public readonly rootPath: string;
-    public readonly metadata: {url: string, version: string};
+    public readonly metadata: {url: string, version: string, iconBaseUrl: string};
 
     constructor(rootPath: string, public readonly config: ExtensionConfiguration) {
         this.rootPath = rootPath;
@@ -31,11 +31,15 @@ export default class Documentation {
                 this.categories = {};
                 this.shims = [];
                 break;
-            case FontAwesomeVersion.V5:
+                case FontAwesomeVersion.V5:
                 this.categories = YAML.parse(fs.readFileSync(`${rootPath}/metadata/categories.yml`, {encoding: 'utf8'}));
                 this.shims = require(`${rootPath}/metadata/shims`);
                 break;
-        }
+            case FontAwesomeVersion.V6:
+                this.categories = {};
+                this.shims = require(`${rootPath}/metadata/shims`);
+                break;
+            }   
            
         this.icons = [];
 

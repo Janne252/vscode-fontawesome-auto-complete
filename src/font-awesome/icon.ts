@@ -37,10 +37,11 @@ export default class Icon {
         // Version migrations
         switch (documentation.config.version) {
             case FontAwesomeVersion.v4:
-                onlineUrl = `fontawesome.com/v4.7.0/icon/${name}/`;
+                onlineUrl = `${documentation.metadata.iconBaseUrl}${name}/`;
                 break;
             case FontAwesomeVersion.V5:
-                onlineUrl = `fontawesome.com/icons/${name}?style=${style}`;
+            case FontAwesomeVersion.V6:
+                onlineUrl = `${documentation.metadata.iconBaseUrl}${name}?style=${style}`;
                 break;
         }
 
@@ -68,7 +69,7 @@ export default class Icon {
             '',
             `| &nbsp;                       |                                                                               |`,
             `|------------------------------|---------------------------------------------------------                      |`,
-            `| **Icon**                     | [${entry.label}](https://${onlineUrl})    &nbsp; &nbsp; \`free\` \`${style}\` |`,
+            `| **Icon**                     | [${entry.label}](${onlineUrl})    &nbsp; &nbsp; \`free\` \`${style}\` |`,
             `| **Categories**               | ${categories.map(o => `\`${o.label}\``).join(', ') || '&nbsp;_N/A_'}          |`,
             `| **Unicode**                  | \`${unicode}\`                                                                |`,
             `| **Changes**                  | ${changes}                                                                    |`,
@@ -88,7 +89,7 @@ export default class Icon {
 
 export interface PartialDocumentation {
     title: string;
-    metadata: {version: string, url: string};
+    metadata: {version: string, url: string, iconBaseUrl: string};
     config: {version: FontAwesomeVersion, previewStyle: {backgroundColor: string, foregroundColor: string}};
 }
 
