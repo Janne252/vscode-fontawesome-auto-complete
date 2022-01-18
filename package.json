@@ -1,7 +1,7 @@
 {
     "name": "fontawesome-autocomplete",
     "displayName": "Font Awesome Auto-complete & Preview",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "publisher": "Janne252",
     "description": "Autocomplete & preview Font Awesome icons in any language.",
     "author": {
@@ -118,7 +118,7 @@
         {
             "url": "https://img.shields.io/badge/Font%20Awesome%20Free-5.15.1-%23339af0",
             "href": "https://fontawesome.com",
-            "description": "Font Awesome Free 5.15.1"
+            "description": "Font Awesome Free 5.15.4"
         },
         {
             "url": "https://img.shields.io/badge/Font%20Awesome-4.7.0-%231d9d74",

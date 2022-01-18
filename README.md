@@ -1,6 +1,6 @@
 # Font Awesome Auto-complete & Preview
 
-[![Font Awesome 5.15.1 Free](https://img.shields.io/badge/Font%20Awesome%20Free-5.15.1-%23339af0)](https://fontawesome.com) [![Font Awesome 4.7.0](https://img.shields.io/badge/Font%20Awesome-4.7.0-%231d9d74)](https://fontawesome.com/v4.7.0/)
+[![Font Awesome 5.15.4 Free](https://img.shields.io/badge/Font%20Awesome%20Free-5.15.4-%23339af0)](https://fontawesome.com) [![Font Awesome 4.7.0](https://img.shields.io/badge/Font%20Awesome-4.7.0-%231d9d74)](https://fontawesome.com/v4.7.0/)
 ![](media/video/demo-autocomplete.gif)
 
 Auto-complete & preview Font Awesome `5` or `4` icons in any language (see [configuration](#configuration)).

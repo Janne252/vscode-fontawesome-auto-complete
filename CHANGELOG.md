@@ -1,4 +1,7 @@
 # Change Log
+## [1.2.0] - 2022-01-18
+- Updated Font Awesome 5 icons to version `5.15.4`
+
 ## [1.1.2] - 2020-12-20
 - Fixed [**#19** Does not remove the trigger characters in *.cshtml files](https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/19)
 
