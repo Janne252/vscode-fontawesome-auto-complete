@@ -1,9 +1,9 @@
 # Font Awesome Auto-complete & Preview
 
-[![Font Awesome 5.15.4 Free](https://img.shields.io/badge/Font%20Awesome%20Free-5.15.4-%23339af0)](https://fontawesome.com) [![Font Awesome 4.7.0](https://img.shields.io/badge/Font%20Awesome-4.7.0-%231d9d74)](https://fontawesome.com/v4.7.0/)
+[![Font Awesome 6 (free)](https://img.shields.io/badge/Font%20Awesome%206%20(free)-beta3-%23ffd43b)](https://fontawesome.com/v6.0/) [![Font Awesome 5 (free)](https://img.shields.io/badge/Font%20Awesome%205%20(free)-5.15.4-%23339af0)](https://fontawesome.com) [![Font Awesome 4](https://img.shields.io/badge/Font%20Awesome%204-4.7.0-%231d9d74)](https://fontawesome.com/v4.7.0/)
 ![](media/video/demo-autocomplete.gif)
 
-Auto-complete & preview Font Awesome `5` or `4` icons in any language (see [configuration](#configuration)).
+Auto-complete & preview Font Awesome `6`, `5`, or `4` icons in any language (see [configuration](#configuration)).
 
 ## Installation
 | Product / installation type | Platform |
