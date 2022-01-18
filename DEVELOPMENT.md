@@ -25,5 +25,7 @@ To acquire a personal access token:
 ### Publishing
 
 ```bash
-$ vsce publish
+$ npm install -g vsce ovsx
+$ vsce publish -p <token>
+$ ovsx publish -p <token>
 ```
