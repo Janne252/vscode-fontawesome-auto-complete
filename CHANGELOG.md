@@ -1,6 +1,8 @@
 # Change Log
 ## [1.2.0] - 2022-01-18
 - Updated Font Awesome 5 icons to version `5.15.4`
+- Added WIP support for Font Awesome 6 (beta3)
+    - If/once a better & more complete source of metadata is available, the (now) missing information (changes, better search keywords, and categories) will be added.
 
 ## [1.1.2] - 2020-12-20
 - Fixed [**#19** Does not remove the trigger characters in *.cshtml files](https://github.com/Janne252/vscode-fontawesome-auto-complete/issues/19)
