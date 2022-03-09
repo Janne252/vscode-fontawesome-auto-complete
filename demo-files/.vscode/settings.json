@@ -1,6 +1,6 @@
 {
     "git.enabled": false,
-    "fontAwesomeAutocomplete.version": "5",
+    "fontAwesomeAutocomplete.version": "6",
     "fontAwesomeAutocomplete.patterns": [
         "**/*.html", "**/*.js", "**.ts", "**/*.vue", "**/*.php", "**/*.cshtml"
     ],
