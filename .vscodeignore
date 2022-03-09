@@ -12,3 +12,6 @@ media/**
 !media/image/icon.png
 migrations/**
 DEVELOPMENT.md
+data/fontawesome-6/metadata/all.js
+data/fontawesome-6/metadata/convert.icons.raw.json.mjs
+data/fontawesome-6/metadata/data.json
