@@ -4,6 +4,10 @@ import deepEqual from 'deep-equal';
 
 // Load icons from a browser module that declares them in window.___FONT_AWESOME___
 import { createRequire } from 'module';
+
+/**@type {{data: {release: {icons: {changes: string[], id: string}[]}}}} */
+const {data} = JSON.parse(fs.readFileSync('./data.json', {encoding: 'utf-8'}));
+
 //@ts-ignore
 const require = createRequire(import.meta.url);
 //@ts-ignore
@@ -65,7 +69,7 @@ for (const style of knownStyles) {
         if (!(key in result)) {
             result[key] = {
                 // Missing data
-                changes: [],
+                changes: data.release.icons.find(i => i.id == key).changes,
                 // Missing data, unused
                 ligatures: [],
                 // Missing data
