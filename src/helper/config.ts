@@ -5,7 +5,7 @@
  * @param defaultValue Default value used if the obj is null or if the key doesn't exist in the object.
  */
 export function getOrDefault<T = string, TObj = Object | Array<T>>(obj: TObj, key: PropertyKey, defaultValue?: T): T {
-    if (obj == null || key in obj === false) {
+    if (obj == null || key in (obj as Record<any, any>) === false) {
         return defaultValue as T;
     } 
 

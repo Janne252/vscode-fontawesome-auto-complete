@@ -1,4 +1,13 @@
 # Change Log
+## [1.3.2] - 2024-06-25
+- Updated Font Awesome 6 icons to version `6.5.2`
+
+## [1.3.1] - 2022-03-09
+- Update and normalize package.json badges to match README.md badges
+
+## [1.3.0] - 2022-03-09
+- Added support for Font Awesome version `6.0.0`
+
 ## [1.2.0] - 2022-01-18
 - Updated Font Awesome 5 icons to version `5.15.4`
 - Added WIP support for Font Awesome 6 (beta3)

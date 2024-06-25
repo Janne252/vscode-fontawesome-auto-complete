@@ -2,7 +2,7 @@
 Fetched from `https://api.fontawesome.com`
 ```
 query {
-  release (version: "6.0.0") {icons(license: "free") {id, changes}}
+  release (version: "6.5.2") {icons(license: "free") {id, changes}}
 }
 ```
 
